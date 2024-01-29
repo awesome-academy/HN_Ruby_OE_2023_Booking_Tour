@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_31_165333) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_01_032446) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -74,22 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_31_165333) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
-  end
-
-  create_table "image_reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "review_id", null: false
-    t.index ["review_id"], name: "index_image_reviews_on_review_id"
-  end
-
-  create_table "image_tours", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "tour_id", null: false
-    t.index ["tour_id"], name: "index_image_tours_on_tour_id"
   end
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -162,8 +146,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_31_165333) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "tour_details"
   add_foreign_key "bookings", "users"
-  add_foreign_key "image_reviews", "reviews"
-  add_foreign_key "image_tours", "tours"
   add_foreign_key "reviews", "tours"
   add_foreign_key "reviews", "users"
   add_foreign_key "tour_details", "tours"

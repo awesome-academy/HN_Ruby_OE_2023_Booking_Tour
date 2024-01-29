@@ -1,0 +1,31 @@
+<%= form_with model: @tour_detail, local: true do |form| %>
+  <div class="form-group">
+    <%= form.label :tour_detail_name, t('tour_details.form.tour_detail_name') %>
+    <%= form.text_field :tour_detail_name, class: 'form-control' %>
+    <%= render  'shared/error_element_message', errors: @tour_detail.errors[:tour_detail_name] %>
+  </div>
+  <div class="form-group">
+    <%= form.label :max_people, t('tour_details.form.max_people') %>
+    <%= form.number_field :max_people, class: 'form-control' %>
+    <%= render  'shared/error_element_message', errors: @tour_detail.errors[:max_people] %>
+  </div>
+  <div class="form-group">
+    <%= form.label :start_location, t('tour_details.form.start_location') %>
+    <%= form.text_field :start_location, class: 'form-control' %>
+    <%= render  'shared/error_element_message', errors: @tour_detail.errors[:start_location] %>
+  </div>
+  <div class="form-group">
+    <%= form.label :price, t('tour_details.form.price') %>
+    <%= form.text_field :price, class: 'form-control' %>
+    <%= render  'shared/error_element_message', errors: @tour_detail.errors[:price] %>
+  </div>
+  <div class="form-group">
+    <%= form.label :detail_description, t('tour_details.form.detail_description') %>
+    <%= form.text_area :detail_description, class: 'form-control' %>
+    <%= render  'shared/error_element_message', errors: @tour_detail.errors[:detail_description] %>
+  </div>
+  <%= form.hidden_field :tour_id%>
+  <div class="actions">
+    <%= form.submit submit_text, class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="blog-item">
+  <div class="bg-white p-4">
+    <div class="mb-2">
+      <% if admin? %>
+        <%= link_to tour_detail.tour_detail_name, edit_tour_detail_path(tour_detail), class: "btn btn-primary" %>
+        <%= link_to t('tour_details.deleted_tour'), tour_detail_path(tour_detail), class: "btn btn-danger", data: { turbo_method: "delete", turbo_confirm: t('tour_details.confirm_delete')} %>
+      <%else%>
+        <%= link_to tour_detail.tour_detail_name, booking_path(tour_detail) %>
+      <%end%>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <span class="font-weight-bold"><%= t('tour_details.form.max_people') %></span>
+      </div>
+      <div class="col-6">
+        <a class="h5 m-0 text-decoration-none" href="#"><%= tour_detail.max_people %></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <span class="font-weight-bold"><%= t('tour_details.form.start_location') %></span>
+      </div>
+      <div class="col-6">
+        <a class="h5 m-0 text-decoration-none" href="#"><%= tour_detail.start_location %></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <span class="font-weight-bold"><%= t('tour_details.form.price') %></span>
+      </div>
+      <div class="col-6">
+        <a class="h5 m-0 text-decoration-none" href="#"><%= number_to_currency(tour_detail.price, unit: ' đ', precision: 0) %></a>
+      </div>
+    </div>
+  </div>
+</div>

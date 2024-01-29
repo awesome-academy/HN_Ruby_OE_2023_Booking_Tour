@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: %i(show edit update)
+  before_action :set_tour, only: %i(show edit update destroy)
   def home; end
 
   def index
@@ -13,19 +13,32 @@ class ToursController < ApplicationController
 
   def update
     if @tour.update tour_params
-      flash[:success] = t("tourcontroller.tour_edit_message")
+      flash[:success] = t("tourcontroller.flash_messages.edit_message")
       redirect_to @tour
     else
-      render :edit
+      flash[:danger] = t("tourcontroller.flash_messages.edit_fail_message")
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def create
     @tour = Tour.new tour_params
     if @tour.save
+      flash[:success] = t("tourcontroller.flash_messages.create_message")
       redirect_to tour_path(@tour)
     else
-      render :new
+      flash[:danger] = t("tourcontroller.flash_messages.create_fail_message")
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @tour.destroy
+      flash[:success] = t("tourcontroller.flash_messages.deleted_success")
+      redirect_to tours_path
+    else
+      flash[:danger] = t("tourcontroller.flash_messages.deleted_failure")
+      render @tour
     end
   end
 

@@ -51,6 +51,9 @@ en:
     select_category: "Select Category"
   tourcontroller:
     tour_create_message: "Create Tour Successfully !!!"
+    flash_messages:
+      deleted_success: "Deleted successfully!"
+      deleted_failure: "Deleted failed!"
   tours:
     tour_name: "Tour Name"
     time_duration: "Time Duration"
@@ -64,3 +67,19 @@ en:
       tour_details: "Tour Details"
       view_details: "View this tour's details"
       add_details: "Add new tour details"
+      delete: "Deleted"
+  tour_details:
+    form:
+      tour_detail_name: "Tour Detail Name"
+      detail_description: "Detail Description"
+      max_people: "Max People"
+      start_location: "Start Location"
+      price: "Price"
+      submit: "Submit"
+      flash:
+      success_create: "Tour Detail was successfully created."
+      success_update: "Tour Detail was successfully updated."
+    confirm_delete: "Are you sure you want to delete ?"
+    deleted_tour: "Deleted tour"
+    tour_detail_deleted: "Xóa thành công !!!! "
+    tour_detail_fail: "Xóa không thành công "
