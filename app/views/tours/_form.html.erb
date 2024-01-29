@@ -1,0 +1,38 @@
+<%= form_for(@tour) do |f| %>
+  <div class="form-group">
+    <%= f.label :tour_name, t('tourform.tour_name') %>
+    <%= f.text_field :tour_name, class: 'form-control', required: true %>
+    <%= render partial: 'shared/error_element_message', locals: { errors: @tour.errors[:tour_name] } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time_duration, t('tourform.time_duration') %>
+    <%= f.text_field :time_duration, class: 'form-control', required: true %>
+    <%= render partial: 'shared/error_element_message', locals: { errors: @tour.errors[:time_duration] } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hagtag, t('tourform.hashtag') %>
+    <%= f.text_field :hagtag, class: 'form-control', required: true %>
+    <%= render partial: 'shared/error_element_message', locals: { errors: @tour.errors[:hagtag] } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tour_description, t('tourform.tour_description') %>
+    <%= f.text_area :tour_description, class: 'form-control', required: true %>
+    <%= render partial: 'shared/error_element_message', locals: { errors: @tour.errors[:tour_description] } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, t('tourform.tour_content') %>
+    <%= f.rich_text_area :content %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tour_category_id, t('tourform.tour_category_id') %>
+    <%= f.collection_select :tour_category_id, categories, :id, :category_name, { prompt: t('tourform.select_category'), class: 'form-control' }, required: true %>
+    <%= render partial: 'shared/error_element_message', locals: { errors: @tour.errors[:tour_category_id] } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, t('tourform.tour_image') %>
+    <%= f.file_field :image %>
+  </div>
+  <div class="form-group">
+    <%= f.submit submit_text, class: 'btn btn-primary' %>
+  </div>
+<% end %>
