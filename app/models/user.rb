@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :phone, presence: true
   validates :image, presence: true
   validates :password_digest, presence: true
-
+  scope :new_user, ->{order(created_at: :desc)}
   has_secure_password
 end

@@ -1,0 +1,26 @@
+vi:
+  user:
+    headers:
+      link:
+        home: 'Trang chủ'
+        tour: 'Tour'
+        your_tour: 'Tour của bạn'
+      admin_link:
+        admin: 'Quản trị'
+        user: "Người dùng"
+        tour: "Tour"
+        bill: "Hóa đơn"
+        tour_comfirm: "Xác nhận tour"
+  footer:
+    brand_name: "DU LỊCH GIA ĐÌNH"
+    tagline: "Khám phá thế giới cùng TRAVELER - nơi mỗi chuyến đi là một câu chuyện đang chờ được kể."
+    follow_us: "Theo dõi chúng tôi"
+    services: "Dịch vụ của chúng tôi"
+    useful_links: "Liên kết hữu ích"
+    contact_us: "Liên hệ với chúng tôi"
+    address: "123 Đường, New York, Mỹ"
+    phone: "+012 345 67890"
+    email: "info@example.com"
+    newsletter: "Bản tin"
+    placeholder_email: "Email của bạn"
+    sign_up: "Đăng ký"
