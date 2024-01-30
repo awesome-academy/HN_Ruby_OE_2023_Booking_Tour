@@ -7,8 +7,8 @@ ruby "3.2.2"
 gem "rails", "~> 7.0.5"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "bcrypt"
 gem "sprockets-rails"
-
 # Use mysql as the database for Active Record
 
 gem "mysql2", "0.5.2"
@@ -26,8 +26,8 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "faker"
 gem "jbuilder"
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
