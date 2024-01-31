@@ -31,3 +31,9 @@
 /config/master.key
 /config/database.yml
 /test/*
+# Ignore node modules in production
+/node_modules/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

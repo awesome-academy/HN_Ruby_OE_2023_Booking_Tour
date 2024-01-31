@@ -4,18 +4,21 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "bootstrap", "~> 4.5.3"
+gem "config"
 gem "rails", "~> 7.0.5"
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "bcrypt"
+gem "pagy"
 gem "sprockets-rails"
 # Use mysql as the database for Active Record
-
+gem "font-awesome-sass", "~> 5.10.2"
+gem "jquery-rails"
+gem "mini_racer"
 gem "mysql2", "0.5.2"
-
 # Use the Puma web server [https://github.com/puma/puma]
+gem "i18n"
 gem "puma", "~> 5.0"
-
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
