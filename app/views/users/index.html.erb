@@ -1,0 +1,11 @@
+<% if @users.any? %>
+  <% @users.each do |user| %>
+    <%= render user %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+<% end %>

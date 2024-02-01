@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     resources :users
     resources :bills
     resources :sessions
-    root 'tours#index'
+    root 'tours#home'
+    get 'login' => 'sessions#new'
+    get 'home' => 'tours#home'
+    post 'login' => 'sessions#create'
+    delete 'logout' =>'sessions#destroy'
+    get 'signup' => 'users#new'
   end
 end

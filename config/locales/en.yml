@@ -11,6 +11,21 @@ en:
         tour: "Tour"
         bill: "Bill"
         tour_comfirm: "Tour Comfirm"
+      account_link:
+        account: 'account'
+        logout: 'Logout'
+        login: 'Login'
+        register: 'Register'
+    loginpage:
+      signin: 'Sign in'
+      signup: 'Sign up'
+      email_label: 'Your email'
+      email: 'email'
+      password: 'Password'
+      password_label: 'Your password'
+      save_password: 'Save password'
+      forgot: 'Forgot'
+      not_found_user: "Not found user"
   footer:
     brand_name: "TRAVELER"
     tagline: "Explore the world with TRAVELER - where every journey is a story waiting to be told."
