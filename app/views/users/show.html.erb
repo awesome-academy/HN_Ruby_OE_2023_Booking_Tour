@@ -1,25 +1,32 @@
-<div class="row mt-5">
-  <div class="col-sm-3">
-    <div class="text-center">
-      <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-      <h6>Upload a different photo...</h6>
-      <input type="file" class="text-center center-block file-upload">
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-sm-3  bg-light">
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div>
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <% if !admin? %>
+            <li class="nav-item">
+              <%= link_to t('user.showpage.bookings'), "#" , class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('user.showpage.tours_follow'), "#" , class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('user.showpage.review_tour'), "#" , class: "nav-link" %>
+            </li>
+          <%end%>
+        </ul>
+      </nav>
     </div>
-  </hr>
-  <br>
-  <ul class="list-group">
-    <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
-  </ul>
-  <div class="panel panel-default">
-    <div class="panel-heading"></div>
-    <div class="panel-body">
-      <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-    </div>
-  </div>
-  <div class="col-sm-9">
-    <div class="tab-content">
-      <div class="tab-pane active" id="home">
-        <%= render "form", submit_text: t("signup")%>
+    <div class="col-sm-9">
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <div class="container">
+            <%= render "form", submit_text: t("user.showpage.form.update_info")%>
+          </div>
+        </div>
       </div>
     </div>
   </div>

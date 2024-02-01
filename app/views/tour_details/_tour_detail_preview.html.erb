@@ -5,7 +5,7 @@
         <%= link_to tour_detail.tour_detail_name, edit_tour_detail_path(tour_detail), class: "btn btn-primary" %>
         <%= link_to t('tour_details.deleted_tour'), tour_detail_path(tour_detail), class: "btn btn-danger", data: { turbo_method: "delete", turbo_confirm: t('tour_details.confirm_delete')} %>
       <%else%>
-        <%= link_to tour_detail.tour_detail_name, booking_path(tour_detail) %>
+        <%= link_to tour_detail.tour_detail_name, book_path(tour_detail) %>
       <%end%>
     </div>
     <div class="row">

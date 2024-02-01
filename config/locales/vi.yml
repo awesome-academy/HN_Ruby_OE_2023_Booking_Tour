@@ -1,4 +1,7 @@
 vi:
+  time:
+    formats:
+      long: "%e %B, %Y %l:%M %p"
   user:
     headers:
       link:
@@ -38,6 +41,12 @@ vi:
       save_password: 'Nhớ mật khẩu'
       forgot: 'Quên mật khẩu'
       not_found_user: "Tài khoản không tồn tại"
+    showpage:
+      bookings: "Lịch sử đặt Tour"
+      tours_follow: "Các tour đã theo dõi"
+      review_tour: "Các bài đánh giá đã viết"
+      form:
+        update_info: "Cập nhật thông tin"
   footer:
     brand_name: "DU LỊCH GIA ĐÌNH"
     tagline: "Khám phá thế giới cùng TRAVELER - nơi mỗi chuyến đi là một câu chuyện đang chờ được kể."
@@ -102,3 +111,33 @@ vi:
     deleted_tour: "Xóa tour"
     tour_detail_deleted: "Xóa thành công !!!! "
     tour_detail_fail: "Xóa không thành công "
+  bookings:
+    form:
+      booking_date: "Ngày đặt"
+      phone: "Điện thoại"
+      date_start: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      numbers_people: "Số người"
+      total_amount: "Tổng giá"
+      price: "Giá"
+      booking: "Đặt tour"
+    show:
+      heading: "Chi Tiết Đặt Phòng"
+      booking_date: "Ngày Đặt Phòng:"
+      phone: "Điện Thoại:"
+      numbers_people: "Số Người:"
+      total_amount: "Tổng Tiền:"
+      status: "Trạng Thái:"
+      tour_detail_info: "Thông Tin Chi Tiết Tour"
+      detail_description: "Mô Tả Chi Tiết:"
+      tour_detail_name: "Tên Chi Tiết Tour:"
+      max_people: "Số Người Tối Đa:"
+      back_to_bookings: "Quay Lại Đặt Phòng"
+    create_success: "Đặt tour thành công!"
+    view_detail: "Xem chi tiết"
+    canceltour: "Hủy Tour"
+    confirmtour: "Xác Nhận tour"
+    cancel_success: "Hủy đặt tour thành công."
+    cancel_error: "Không thể hủy đặt tour."
+    confirm_success: "Xác nhận đặt tour thành công."
+    confirm_error: "Không thể xác nhận đặt tour."

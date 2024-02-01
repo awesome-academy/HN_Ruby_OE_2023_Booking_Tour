@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "booking" do %>
+  <%= t('bookings.create_success') %>
+  <%= link_to "New date",
+                booking_path(@booking),
+                 data: { turbo: false },
+                class: "btn btn-primary" %>
+<% end %>

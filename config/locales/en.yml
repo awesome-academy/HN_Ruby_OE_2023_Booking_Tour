@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      long: "%B %e, %Y %l:%M %p"
   user:
     headers:
       link:
@@ -83,3 +86,31 @@ en:
     deleted_tour: "Deleted tour"
     tour_detail_deleted: "Xóa thành công !!!! "
     tour_detail_fail: "Xóa không thành công "
+  bookings:
+    form:
+      booking_date: "Booking Date"
+      phone: "Phone"
+      date_start: "Start Date"
+      end_date: "End Date"
+      numbers_people: "Number of People"
+      total_amount: "Total Amount"
+      booking: "Booking"
+    show:
+        heading: "Booking Details"
+        booking_date: "Booking Date:"
+        phone: "Phone:"
+        numbers_people: "Number of People:"
+        total_amount: "Total Amount:"
+        status: "Status:"
+        tour_detail_info: "Tour Detail Information:"
+        detail_description: "Detail Description:"
+        tour_detail_name: "Tour Detail Name:"
+        max_people: "Max People:"
+  create_success: "Booking created successfully!"
+  view_detail: "View Detail"
+  canceltour: "Cancel Tour"
+  confirmtour: "confirm tour"
+  cancel_success: "Booking canceled successfully."
+  cancel_error: "Unable to cancel the booking."
+  confirm_success: "Booking confirmed successfully."
+  confirm_error: "Unable to confirm the booking."
