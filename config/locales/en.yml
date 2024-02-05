@@ -39,3 +39,28 @@ en:
     newsletter: "Newsletter"
     placeholder_email: "Your Email"
     sign_up: "Sign Up"
+  tourform:
+    tour_name: "Tour Name"
+    time_duration: "Time Duration"
+    hashtag: "Hashtag"
+    tour_description: "Tour Description"
+    tour_content: "Tour Content"
+    tour_category_id: "Tour Category"
+    create: "Create Tour"
+    tour_image: "Tour Background Image"
+    select_category: "Select Category"
+  tourcontroller:
+    tour_create_message: "Create Tour Successfully !!!"
+  tours:
+    tour_name: "Tour Name"
+    time_duration: "Time Duration"
+    hashtag: "Hashtag"
+    tour_description: "Tour Description"
+    tour_category: "Tour Category"
+    tour_image: "Tour Background Image"
+    category: "Category"
+    navbar:
+      edit: "Edit"
+      tour_details: "Tour Details"
+      view_details: "View this tour's details"
+      add_details: "Add new tour details"

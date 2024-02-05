@@ -16,8 +16,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :username, presence: true
   validates :phone, presence: true
-  validates :password, presence: true
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, allow_nil: true
+  validates :password_confirmation, presence: true, allow_nil: true
   scope :new_user, ->{order(created_at: :desc)}
   has_secure_password
   class << self

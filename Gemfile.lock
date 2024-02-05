@@ -328,7 +328,7 @@ DEPENDENCIES
   debug
   faker
   font-awesome-sass (~> 5.10.2)
-  image_processing (>= 1.2)
+  image_processing
   importmap-rails
   jbuilder
   jquery-rails

@@ -17,7 +17,7 @@ gem "jquery-rails"
 gem "mini_racer"
 gem "mysql2", "0.5.2"
 # Use the Puma web server [https://github.com/puma/puma]
-gem "image_processing", ">= 1.2"
+gem "image_processing"
 gem "puma", "~> 5.0"
 gem "rails-i18n"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -51,7 +51,6 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
-# gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html
