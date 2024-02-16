@@ -15,9 +15,12 @@ vi:
         bill: "Hóa đơn"
         tour_comfirm: "Xác nhận tour"
         new_tour: "Thêm tour mới"
+        admin_home: "Dashboard"
       account_link:
         account: 'Tài khoản'
         information: 'Thông tin tài khoản'
+        history_booking: 'Các tour đã đặt'
+        fllowing_booking: 'Các tour đã theo dõi'
         logout: 'Đăng xuất'
         login: 'Đăng nhập'
         register: 'Đăng Ký'
@@ -143,3 +146,17 @@ vi:
     cancel_error: "Không thể hủy đặt tour."
     confirm_success: "Xác nhận đặt tour thành công."
     confirm_error: "Không thể xác nhận đặt tour."
+    must_be_user: "Chỉ có người dùng mới đặt được tour"
+    errors:
+      date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
+  dashboard:
+    logo: "ThatDepTrai"
+    link:
+      tour: "Tour"
+      tours: "List of Tour"
+      new_tours": "new Tour"
+      bill: "Bill"
+      bills: "List of Bill"
+      category: "Category"
+      categorys: "List of Category"
+      new_categorys": "new Category"
