@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(show)
+
   def index
-    @pagy, @users = pagy(User.new_user,
-                         items: Settings.users_on_page)
+    @pagy, @users = pagy(User.new_user)
   end
 
   def new

@@ -5,10 +5,11 @@ class Admin::BaseController < ApplicationController
   def check_admin
     if !logged_in?
       store_location
+      flash[:warning] = t("controllers.errors.requied_login")
       redirect_to login_url
     elsif !admin?
-      render status: :forbidden, file: Rails.root.join("public/403.html"),
-             layout: false
+      flash[:warning] = t("controllers.errors.only_admin_role")
+      redirect_to login_url
     end
   end
 end

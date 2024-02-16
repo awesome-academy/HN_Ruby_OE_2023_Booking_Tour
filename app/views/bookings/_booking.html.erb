@@ -1,0 +1,37 @@
+<%= turbo_frame_tag booking do %>
+  <div class="container mt-4">
+    <section class="booking-details bg-light p-4 rounded">
+      <p class="mb-2">
+        <strong><%= t("bookings.show.tour_detail_name") %></strong>
+        <%= link_to booking.tour_detail.tour_detail_name, tour_path(booking.tour_detail.tour), class: "text-primary" %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.detail_description") %></strong>
+        <%= booking.tour_detail.detail_description %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.booking_date") %></strong>
+        <%= l(booking.created_at, format: :long) %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.phone") %></strong>
+        <%= booking.phone %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.numbers_people") %></strong>
+        <%= booking.numbers_people %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.total_amount") %></strong>
+        <%= number_to_currency(booking.total_amount, unit: "₫", format: "%n %u", precision: 0) %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.status") %></strong>
+        <%= booking.status %>
+        <% if booking.pending? && (booking.user == current_user || current_user.admin?)  %>
+          <%= link_to t("bookings.canceltour"), cancel_booking_path(booking), class: "btn btn-danger btn-sm ml-2" %>
+        <% end %>
+      </p>
+    </section>
+  </div>
+<% end %>

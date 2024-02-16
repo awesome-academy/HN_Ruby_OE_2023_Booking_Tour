@@ -12,10 +12,8 @@
     <%= render "admin/layouts/header"%>
     <div class="row">
       <%= render "admin/layouts/side_navbar"%>
-      <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
+      <div class="col-md-10 ml-sm-auto col-lg-11 px-md-4">
+        <%= render "shared/flash_messages"%>
         <%= yield %>
       </div>
     </div>

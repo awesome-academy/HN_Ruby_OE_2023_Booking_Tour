@@ -11,8 +11,11 @@ class SessionsController < ApplicationController
       else
         forget @user
       end
+      redirect_back_or root_url
+    else
+      flash[:error] = t("login_required")
+      render :new
     end
-    redirect_back_or root_url
   end
 
   def destroy

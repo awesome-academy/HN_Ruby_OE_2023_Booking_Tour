@@ -8,7 +8,7 @@
         <ul class="navbar-nav">
           <% if !admin? %>
             <li class="nav-item">
-              <%= link_to t("user.showpage.bookings"), "#" , class: "nav-link" %>
+              <%= link_to t("user.showpage.bookings"), history_path , class: "nav-link" %>
             </li>
             <li class="nav-item">
               <%= link_to t("user.showpage.tours_follow"), "#" , class: "nav-link" %>
