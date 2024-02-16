@@ -84,6 +84,8 @@ vi:
       deleted_success: "Xóa thành công!"
       deleted_failure: "Xóa thất bại!"
   tours:
+    follow_success: "Theo dõi tour thành công"
+    unfollow_success: "Bỏ theo dõi tour thành công"
     tour_name: "Tên Tour"
     time_duration: "Thời Lượng"
     hashtag: "Hashtag"

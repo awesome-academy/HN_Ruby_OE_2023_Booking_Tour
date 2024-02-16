@@ -45,6 +45,8 @@ en:
     placeholder_email: "Your Email"
     sign_up: "Sign Up"
   tourform:
+    follow_success: "Follow tour success"
+    unfollow_success: "unfollow tour success"
     tour_name: "Tour Name"
     time_duration: "Time Duration"
     hashtag: "Hashtag"
@@ -122,6 +124,7 @@ en:
   dashboard:
     logo: "ThatDepTrai"
     link:
+<<<<<<< HEAD
       tour: "Tour"
       tours: "List of Tour"
       new_tours": "new Tour"
@@ -155,3 +158,29 @@ en:
       delete: "Delete Category"
       details: "Details"
       update: "Update"
+=======
+      tour: "tour"
+      tours: "Danh sách tours"
+      new_tours": "Thêm tour mới"
+      bill: "Hóa Đơn"
+      bills: "Danh sách đăt tour"
+      category: "Danh sách danh mục"
+      categorys: "Danh sách danh mục"
+      new_categorys": "Thêm danh mục"
+  tour_categories:
+    number_of_tours: "Number of tours"
+    form:
+      category_name: "Category Name :"
+      submit_button: "Save"
+    flash_messages:
+      edit_success: "Tour category was successfully updated."
+      edit_failure: "Failed to update the tour category."
+      create_success: "Tour category was successfully created."
+      create_failure: "Failed to create the tour category."
+      destroy_success: "Tour category was successfully deleted."
+      destroy_failure: "Failed to delete the tour category."
+      not_found: "Tour category not found."
+    delete: "Delete"
+    details: "Details"
+    update: "Update"
+>>>>>>> ba6fc2f (category manager)

@@ -1,0 +1,23 @@
+<%= turbo_frame_tag tour do %>
+  <div class="row">
+    <div class="col-md-4">
+      <% if !tour.followed_users.include?(current_user) %>
+        <%= link_to follow_tour_path(tour), class: "h5 m-0 text-decoration-none" do %>
+          <%= tour.tour_followings.count %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to unfollow_tour_path(tour), class: "nav-link text-danger", data: { turbo_method: "delete" } do %>
+          <%= tour.tour_followings.count %>
+          <i class="fas fa-heart"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <a class="h5 m-0 text-decoration-none" href="#"><%= tour.reviews.count %><i class="fas fa-comment"></i></a>
+    </div>
+    <div class="col-md-4">
+      <a class="h5 m-0 text-decoration-none" href="#"><%= tour.bookings.count %><i class="fas fa-user-friends"></i></a>
+    </div>
+  </div>
+<% end %>

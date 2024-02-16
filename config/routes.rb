@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    resources :tours, :tour_details, :users, :sessions, :bookings
+    resources :tours, :tour_details, :users, :sessions, :bookings, :relationships
     root 'tours#home'
     get 'login' => 'sessions#new'
     get 'home' => 'tours#home'
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     get 'signup' => 'users#new'
     get 'book/:id' => 'bookings#new', as: 'book'
     get 'booking_history' => 'bookings#booking_history', as:'history'
+    get 'tour_following' => 'users#following_tour', as: 'tour_following'
+    get 'follow/:id' => 'relationships#create', as: 'follow_tour'
+    delete 'unfollow/:id' => 'relationships#destroy', as: 'unfollow_tour'
   end
   namespace :admin do
     scope "(:locale)", locale: /en|vi/ do

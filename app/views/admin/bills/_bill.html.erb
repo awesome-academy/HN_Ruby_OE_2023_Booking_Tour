@@ -28,10 +28,10 @@
       <p class="mb-2">
         <strong><%= t("bookings.show.status") %></strong>
         <%= bill.status %>
-        <% if bill.pending? && (bill.user == current_user || current_user.admin?)  %>
+        <% if bill.pending? %>
           <%= button_to t("bookings.canceltour"), admin_cancel_booking_path(bill), method: :put, class: "d-flex btn btn-danger btn-sm ml-2", data: { confirm: "Are you sure you want to confirm this booking?" } %>
         <% end %>
-        <% if bill.pending? && current_user.admin? %>
+        <% if bill.pending? %>
           <%= button_to t("bookings.confirmtour"), admin_confirm_booking_path(bill), method: :put, class: "d-flex btn btn-primary btn-sm ml-2", data: { confirm: "Are you sure you want to confirm this booking?" } %>
         <% end %>
       </p>

@@ -21,6 +21,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def following_tour
+    @pagy, @tours = pagy(current_user.followed_tours)
+    render "tours/index"
+  end
+
   def show; end
 
   private

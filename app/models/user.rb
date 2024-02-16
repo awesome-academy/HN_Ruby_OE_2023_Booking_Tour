@@ -39,6 +39,16 @@ class User < ApplicationRecord
     update_column :remember_digest, User.digest(remember_token)
   end
 
+  def following_tour tour
+    followed_tours << tour unless followed_tours.include?(tour)
+  end
+
+  def unfollow_tour tour
+    return unless tour.present? && followed_tours.include?(tour)
+
+    followed_tours.delete(tour)
+  end
+
   def forget
     update_column :remember_digest, nil
   end
