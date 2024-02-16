@@ -4,11 +4,12 @@ class ToursController < ApplicationController
   def home; end
 
   def index
-    @pagy, @tours = pagy(Tour.new_tour,
-                         items: Settings.tours_on_page)
+    @pagy, @tours = pagy(Tour.new_tour)
   end
 
-  def show; end
+  def show
+    # @pagy, @reviews = pagy(@tour.reviews.new_review)
+  end
   private
   def set_tour
     @tour = Tour.find_by(id: params[:id])
