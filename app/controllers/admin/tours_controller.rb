@@ -52,7 +52,6 @@ class Admin::ToursController < Admin::BaseController
 
   def set_tour
     @tour = Tour.find_by(id: params[:id])
-
     return if @tour
 
     flash[:success] = t("tour_details.message.not_found")

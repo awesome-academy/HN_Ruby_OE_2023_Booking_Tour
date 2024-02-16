@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
   before_action :require_logged_in_user, only: [:booking, :create]
   before_action :set_tour_detail, only: :booking
   before_action :set_booking, only: [:show, :cancel]
-  before_action :set_bookings, only: [:booking_history, :booking_following]
 
   def booking
     @booking = build_booking
@@ -34,10 +33,6 @@ class BookingsController < ApplicationController
 
   def booking_history
     render_index_page(current_user.bookings)
-  end
-
-  def booking_following
-    render_index_page(current_user.followed_tours)
   end
 
   private

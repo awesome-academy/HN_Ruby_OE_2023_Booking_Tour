@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i(show)
 
   def index
-    @pagy, @users = pagy(User.new_user,
-                         items: Settings.users_on_page)
+    @pagy, @users = pagy(User.new_user)
   end
 
   def new
@@ -20,6 +19,11 @@ class UsersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def following_tour
+    @pagy, @tours = pagy(current_user.followed_tours)
+    render "tours/index"
   end
 
   def show; end

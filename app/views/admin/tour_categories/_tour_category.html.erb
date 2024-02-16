@@ -1,0 +1,14 @@
+<div class="col-12">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= t("tour_categories.form.category_name") %></h5>
+      <p class="card-text"><%= tour_category.category_name %></p>
+      <h5 class="card-title"><%= t("tour_categories.number_of_tours") %></h5>
+      <p class="card-text"><%= tour_category.tours.count %></p>
+      <div class="d-flex mt-3">
+        <%= button_to t('tour_categories.delete'), admin_tour_category_path(tour_category), method: :delete, class: 'btn btn-danger btn-sm mx-3' %>
+        <%= link_to t('tour_categories.update'), edit_admin_tour_category_path(tour_category), class: 'btn btn-success btn-sm mx-3' %>
+      </div>
+    </div>
+  </div>
+</div>
