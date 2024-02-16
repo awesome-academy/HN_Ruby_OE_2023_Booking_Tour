@@ -1,5 +1,5 @@
 class Admin::TourCategoriesController < Admin::BaseController
-  before_action :set_tour_category, only: %i(show edit update destroy)
+  before_action :find_tour_category, only: %i(show edit update destroy)
 
   def index
     @pagy, @tour_categories = pagy(TourCategory.new_category)
@@ -53,7 +53,7 @@ class Admin::TourCategoriesController < Admin::BaseController
     params.require(:tour_category).permit(TourCategory::CREATE_PARAMS)
   end
 
-  def set_tour_category
+  def find_tour_category
     @tour_category = TourCategory.find_by(id: params[:id])
 
     return if @tour_category

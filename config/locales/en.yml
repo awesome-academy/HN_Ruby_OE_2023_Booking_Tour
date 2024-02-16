@@ -45,6 +45,8 @@ en:
     placeholder_email: "Your Email"
     sign_up: "Sign Up"
   tourform:
+    follow_success: "Follow tour success"
+    unfollow_success: "unfollow tour success"
     tour_name: "Tour Name"
     time_duration: "Time Duration"
     hashtag: "Hashtag"
@@ -70,6 +72,7 @@ en:
     navbar:
       edit: "Edit"
       tour_details: "Tour Details"
+      view_details: "View this tours details"
       add_details: "Add new tour details"
       delete: "Deleted"
   tour_details:

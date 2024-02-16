@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :check_user,
                 only: %i(new create booking_history booking_following)
-  before_action :set_tour_detail, only: %i(new)
+  before_action :load_tour_detail, only: %i(new)
   before_action :find_booking, only: %i(show cancel)
   before_action :check_owner, only: %i(cancel)
   after_action :update_bill_frame, only: %i(cancel)
@@ -53,7 +53,7 @@ class BookingsController < ApplicationController
     render "bookings/index"
   end
 
-  def set_tour_detail
+  def load_tour_detail
     @tour_detail = TourDetail.find_by(id: params[:id])
     return if @tour_detail
 
