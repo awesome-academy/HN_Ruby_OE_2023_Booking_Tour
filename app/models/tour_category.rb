@@ -1,8 +1,7 @@
-# app/models/tour_category.rb
-
 class TourCategory < ApplicationRecord
-  has_many :tours, dependent: :destroy
+  CREATE_PARAMS = [:category_name].freeze
+  has_many :tours, dependent: :restrict_with_error
 
   validates :category_name, presence: true
-  # Add any additional validations as needed
+  scope :new_category, ->{order(created_at: :desc)}
 end
