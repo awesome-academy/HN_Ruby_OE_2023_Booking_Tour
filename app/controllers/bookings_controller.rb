@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :check_user,
-                only: %i(new create booking_history booking_following)
-  before_action :load_tour_detail, only: %i(new)
+                only: %i(new create booking_history)
+  before_action :set_tour_detail, only: %i(new)
   before_action :find_booking, only: %i(show cancel)
   before_action :check_owner, only: %i(cancel)
   after_action :update_bill_frame, only: %i(cancel)
@@ -33,10 +33,6 @@ class BookingsController < ApplicationController
 
   def booking_history
     render_index_page(current_user.bookings)
-  end
-
-  def booking_following
-    render_index_page(current_user.followed_tours)
   end
 
   private

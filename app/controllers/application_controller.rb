@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
+  include Admin::SecurityHelper
   include SessionsHelper
   include ToursHelper
   before_action :set_locale
