@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :tour_followings, dependent: :destroy
   has_many :followed_tours, through: :tour_followings, source: :tour
+  has_many :tour_details_booked, through: :bookings, source: :tour_detail
   validates :email, presence: true
   validates :username, presence: true
   validates :phone, presence: true
@@ -37,6 +38,10 @@ class User < ApplicationRecord
   def remember
     self.remember_token = User.new_token
     update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def tours_booked
+    tour_details_booked.map(&:tour).uniq
   end
 
   def following_tour tour

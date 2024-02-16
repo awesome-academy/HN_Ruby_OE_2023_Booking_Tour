@@ -1,10 +1,12 @@
 <div class="container py-5">
   <div class="row pb-3">
-    <% @tours.each do |tour| %>
-      <%= render tour %>
+    <% if @tours.any? %>
+      <% @tours.each do |tour| %>
+        <%= render tour %>
+      <% end %>
+      <div class="col-12 mt-2 d-flex justify-content-center">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
     <% end %>
-    <div class="col-12 mt-2 d-flex justify-content-center">
-      <%== pagy_bootstrap_nav(@pagy) %>
-    </div>
   </div>
 </div>

@@ -36,6 +36,16 @@
             </div>
           </div>
         </div>
+        <div class="bg-white p-3 m-2">
+          <%= turbo_frame_tag :reviews do %>
+            <%= render 'reviews/reviews' %>
+          <% end %>
+          <%= turbo_frame_tag :review_form do %>
+            <% if logged_in? && !@tour.users_reviewed.include?(current_user) && @tour.users_booked.include?(current_user) %>
+              <%= link_to t('bookings.review_tour'), review_tour_path(@tour), class: 'btn btn-primary btn-sm ml-2' %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-3">
@@ -47,8 +57,6 @@
           <% end %>
         <% end %>
       </div>
-      <%= turbo_frame_tag "booking" do %>
-      <% end %>
     </div>
   </div>
 </div>

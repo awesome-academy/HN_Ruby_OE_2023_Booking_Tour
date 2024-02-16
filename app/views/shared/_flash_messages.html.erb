@@ -1,7 +1,9 @@
 <%= turbo_frame_tag :flash do %>
-  <% flash.each do |type, message| %>
-    <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
-      <%= message %>
-    </div>
-  <% end %>
+  <div id="flash-container" class="sticky-top text-center">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
 <% end %>

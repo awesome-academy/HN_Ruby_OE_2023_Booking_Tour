@@ -48,7 +48,8 @@ vi:
     showpage:
       bookings: "Lịch sử đặt Tour"
       tours_follow: "Các tour đã theo dõi"
-      review_tour: "Các bài đánh giá đã viết"
+      reviews_tour: "Các bài đánh giá đã viết"
+      review_tour: "Đánh giá tour"
       form:
         update_info: "Cập nhật thông tin"
   footer:
@@ -187,3 +188,8 @@ vi:
       delete: "Xóa Danh mục"
       details: "Chi tiết"
       update: "Cập nhật"
+  reviews:
+    submit_button: "Gửi"
+    content: "Nội dung"
+    errors:
+      unique: "User chỉ có thể  review tour 1 lần"

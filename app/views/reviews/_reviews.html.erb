@@ -1,0 +1,8 @@
+<% if @reviews.any? %>
+  <% @reviews.each do |review| %>
+    <%= render review %>
+  <% end %>
+  <div class="col-12 mt-2 d-flex justify-content-center">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+<% end %>

@@ -56,7 +56,7 @@
           <div class="nav-item dropdown">
             <% if logged_in? %>
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <%= image_tag current_user.avatar.variant(:avatar_icon) %>
+                <%= image_tag current_user.avatar.variant(:avatar_icon)  if current_user.avatar&.attached?%>
                 <%= current_user.username %>
               </a>
               <div class="dropdown-menu border-0 rounded-0 m-0">
@@ -66,26 +66,26 @@
                 <% else %>
                   <%= link_to t("user.headers.account_link.history_booking"), history_path, class: "dropdown-item" %>
                   <%= link_to t("user.headers.account_link.fllowing_booking"), tour_following_path, class: "dropdown-item" %>
-                  <% end %>
-                  <%= link_to t("user.headers.account_link.logout"), logout_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
-                </div>
-              <% else %>
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= t("user.headers.account_link.account" )%></a>
-                <div class="dropdown-menu border-0 rounded-0 m-0">
-                  <%= link_to t("user.headers.account_link.login"), login_path, class: "dropdown-item" %>
-                  <%= link_to t("user.headers.account_link.register"), signup_path, class: "dropdown-item" %>
-                </div>
-              <% end %>
-            </div>
-            <div class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Language</a>
-              <div class="dropdown-menu border-0 rounded-0 m-0">
-                <%= link_to "English", url_for(locale: "en"), class: "dropdown-item" %>
-                <%= link_to "Vietnamese", url_for(locale: "vi"), class: "dropdown-item" %>
+                <% end %>
+                <%= link_to t("user.headers.account_link.logout"), logout_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
               </div>
+            <% else %>
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= t("user.headers.account_link.account" )%></a>
+              <div class="dropdown-menu border-0 rounded-0 m-0">
+                <%= link_to t("user.headers.account_link.login"), login_path, class: "dropdown-item" %>
+                <%= link_to t("user.headers.account_link.register"), signup_path, class: "dropdown-item" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Language</a>
+            <div class="dropdown-menu border-0 rounded-0 m-0">
+              <%= link_to "English", url_for(locale: "en"), class: "dropdown-item" %>
+              <%= link_to "Vietnamese", url_for(locale: "vi"), class: "dropdown-item" %>
             </div>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </div>
+</div>

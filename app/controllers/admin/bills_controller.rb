@@ -1,5 +1,5 @@
 class Admin::BillsController < Admin::BaseController
-  before_action :find_bill, only: %i(confirm cancel)
+  before_action :find_bill, only: %i(confirm cancel success)
   def index
     @pagy, @bills = pagy(Booking.new_bills)
   end
@@ -12,6 +12,17 @@ class Admin::BillsController < Admin::BaseController
     end
     update_bill_frame
   end
+
+  def success
+    if @bill.success_booking(current_user)
+      flash.now[:success] = t("bookings.cancel_success")
+    else
+      flash.now[:error] = t("bookings.cancel_error")
+    end
+    update_bill_frame
+  end
+
+  def show; end
 
   def confirm
     if @bill.confirm_booking

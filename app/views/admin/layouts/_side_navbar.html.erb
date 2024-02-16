@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="d-md-block bg-light sidebar collapse vh-100">
   <div class="sidebar-sticky pt-3">
     <ul class="nav flex-column">
       <li class="nav-item dropdown">
@@ -25,8 +25,8 @@
         <div class="dropdown-menu">
           <%= link_to t("dashboard.link.categorys"), admin_tour_categories_path, class: "dropdown-item" %>
           <%= link_to t("dashboard.link.new_categorys"), new_admin_tour_category_path, class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
