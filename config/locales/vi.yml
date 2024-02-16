@@ -169,3 +169,19 @@ vi:
       booking_not_found: "Đặt tour không tồn tại"
       tour_detail_not_found: "Chi tiết tour không tồn tại"
       only_admin_role: "Chức năng này chỉ dành cho quản trị viên"
+  tour_categories:
+    number_of_tours: "Số  lượng tour"
+    form:
+      category_name: "Tên danh mục :"
+      submit_button: "Lưu"
+    flash_messages:
+      edit_success: "Danh mục Tour đã được cập nhật thành công."
+      edit_failure: "Không thể cập nhật danh mục Tour."
+      create_success: "Danh mục Tour đã được tạo thành công."
+      create_failure: "Không thể tạo danh mục Tour."
+      destroy_success: "Danh mục Tour đã được xóa thành công."
+      destroy_failure: "Không thể xóa danh mục Tour."
+      not_found: "Không tìm thấy danh mục Tour."
+      delete: "Xóa Danh mục"
+      details: "Chi tiết"
+      update: "Cập nhật"
