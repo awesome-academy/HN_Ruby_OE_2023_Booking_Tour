@@ -1,4 +1,7 @@
 class TourDetail < ApplicationRecord
+  TOURDETAIL_PARAMS = [:tour_detail_name, :detail_description,
+                        :max_people, :start_location, :price,
+                        :tour_id].freeze
   belongs_to :tour
   has_many :bookings, dependent: :destroy
 

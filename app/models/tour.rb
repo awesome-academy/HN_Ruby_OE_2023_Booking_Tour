@@ -10,7 +10,6 @@ class Tour < ApplicationRecord
                        Settings.width_avatar_icon]
   end
   has_many :tour_details, dependent: :destroy
-  has_one :image_tour, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :tour_followings,
            class_name: TourFollowing.name, dependent: :destroy
