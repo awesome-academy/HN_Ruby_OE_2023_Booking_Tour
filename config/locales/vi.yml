@@ -97,7 +97,6 @@ vi:
     navbar:
       edit: "Chỉnh sửa"
       tour_details: "Chi Tiết Tour"
-      view_details: "Xem chi tiết tour này"
       add_details: "Thêm chi tiết tour mới"
       delete: "Xóa Tour này"
   tour_details:

@@ -31,13 +31,15 @@ class Admin::TourCategoriesController < Admin::BaseController
   end
 
   def destroy
-    if @tour_category.destroy
+    @tour_category.destroy
+
+    if @tour_category.errors.any?
+      flash[:danger] = t("tour_categories.flash_messages.destroy_failure") +
+                       " #{@tour_category.errors.full_messages.join(', ')}"
+    else
       flash[:success] =
         t("tour_categories.flash_messages.destroy_success")
-    else
-      flash[:danger] = t("tour_categories.flash_messages.destroy_failure")
     end
-
     redirect_to admin_tour_categories_path
   end
 
