@@ -10,6 +10,19 @@ class Booking < ApplicationRecord
                            greater_than: Settings.peoples_booking_tours_min}
   validate :booking_date_in_future
   scope :new_bills, ->{order(created_at: :desc)}
+  scope :by_tour_and_date, lambda {|tour_detail_id, date_start, status|
+                             query = all
+
+                             if tour_detail_id.present?
+                               query = query.where(tour_detail_id:)
+                             end
+                             if date_start.present?
+                               query = query.where(date_start:)
+                             end
+                             query = query.where(status:) if status.present?
+
+                             query
+                           }
 
   before_create :update_prices, :status_booking
   enum status: {

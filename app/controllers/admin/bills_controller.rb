@@ -4,6 +4,14 @@ class Admin::BillsController < Admin::BaseController
     @pagy, @bills = pagy(Booking.new_bills)
   end
 
+  def filter
+    @pagy, @bills = pagy(Booking.by_tour_and_date(
+      params[:tour_detail_id], params[:date_start], params[:status]
+    ).order(created_at: :desc))
+
+    render "admin/bills/index"
+  end
+
   def cancel
     if @bill.cancel_booking
       flash.now[:success] = t("bookings.cancel_success")
