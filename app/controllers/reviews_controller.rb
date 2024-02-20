@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :find_tour, only: %i(review)
+  before_action :find_tour, only: %i(new)
+
   def new
     @review = Review.new(user: current_user, tour: @tour)
     form_frame
