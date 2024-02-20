@@ -153,7 +153,15 @@ en:
     confirm_error: "Unable to confirm booking."
     must_be_user: "Only users can book tours"
     errors:
-      date_in_future: "Booking date must be greater than the current date"
+      date_in_fulture: "Date start must in fulture"
+    filter:
+      labels:
+        select_tour_detail: 'Select tour'
+        tour_detail_id: 'Tour Detail ID'
+        date_start: 'Date Start'
+        status: 'Status'
+      buttons:
+        filter_bookings: 'Filter Bookings'
   dashboard:
     logo: "ThatDepTrai"
     link:
