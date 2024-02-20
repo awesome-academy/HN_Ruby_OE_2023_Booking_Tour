@@ -79,8 +79,8 @@ class BookingsController < ApplicationController
 
   def update_bill_frame
     render turbo_stream: [
-      turbo_stream.replace(@booking, partial: "bookings/booking",
-                          locals: {booking: @booking}),
+      turbo_stream.replace(@booking, partial: "bookings/status",
+locals: {booking: @booking}),
       turbo_stream.append(:flash, partial: "shared/flash_messages",
                           locals: {flash:})
     ]
