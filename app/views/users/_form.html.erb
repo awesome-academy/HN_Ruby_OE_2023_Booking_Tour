@@ -1,7 +1,5 @@
 <div class="card mt-5">
   <article class="card-body">
-    <a href="" class="float-right btn btn-outline-primary"><%= t( 'user.signuppate.signup' )%></a>
-    <h4 class="card-title mb-4 mt-1"><%= t( 'user.signuppate.signup' )%></h4>
     <%= form_for(@user) do |f|%>
       <div class="form-group">
         <%= f.label :username, t( 'user.signuppate.user_label' )%>

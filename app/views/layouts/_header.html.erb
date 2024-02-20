@@ -1,4 +1,3 @@
-<!-- Topbar Start -->
 <div class="container-fluid bg-light pt-3 d-none d-lg-block">
   <div class="container">
     <div class="row">
@@ -31,7 +30,6 @@
     </div>
   </div>
 </div>
-<!-- Topbar End -->
 <div class="container-fluid position-relative nav-bar p-0">
   <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
     <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
@@ -53,18 +51,8 @@
       </div>
       <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
         <div class="navbar-nav ml-auto py-0">
-          <%= link_to t('user.headers.link.home' ), home_path, class: 'nav-item nav-link active' %>
-          <%= link_to t('user.headers.link.tour' ), tours_path, class: 'nav-item nav-link' %>
-          <%= link_to t('user.headers.link.your_tour' ), tours_path, class: 'nav-item nav-link' %>
-          <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= t('user.headers.admin_link.admin' )%></a>
-            <div class="dropdown-menu border-0 rounded-0 m-0">
-              <%= link_to t('user.headers.admin_link.user'), users_path, class: 'dropdown-item' %>
-              <%= link_to t('user.headers.admin_link.tour'), tours_path, class: 'dropdown-item' %>
-              <%= link_to t('user.headers.admin_link.bill'), bills_path, class: 'dropdown-item' %>
-              <%= link_to t('user.headers.admin_link.tour_comfirm'), users_path, class: 'dropdown-item' %>
-            </div>
-          </div>
+          <%= link_to t("user.headers.link.home" ), home_path, class: "nav-item nav-link active" %>
+          <%= link_to t("user.headers.link.tour" ), tours_path, class: "nav-item nav-link" %>
           <div class="nav-item dropdown">
             <% if logged_in? %>
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -72,22 +60,22 @@
                 <%= current_user.username %>
               </a>
               <div class="dropdown-menu border-0 rounded-0 m-0">
-                <%= link_to t('user.headers.account_link.information'), current_user, class: 'dropdown-item' %>
-                <%= link_to t('user.headers.account_link.logout'), logout_path, data: { turbo_method: :delete }, class: 'dropdown-item' %>
+                <%= link_to t("user.headers.account_link.information"), current_user, class: "dropdown-item" %>
+                <%= link_to t("user.headers.account_link.logout"), logout_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
               </div>
             <% else %>
-              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= t('user.headers.account_link.account' )%></a>
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= t("user.headers.account_link.account" )%></a>
               <div class="dropdown-menu border-0 rounded-0 m-0">
-                <%= link_to t('user.headers.account_link.login'), login_path, class: 'dropdown-item' %>
-                <%= link_to t('user.headers.account_link.register'), signup_path, class: 'dropdown-item' %>
+                <%= link_to t("user.headers.account_link.login"), login_path, class: "dropdown-item" %>
+                <%= link_to t("user.headers.account_link.register"), signup_path, class: "dropdown-item" %>
               </div>
             <% end %>
           </div>
           <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Language</a>
             <div class="dropdown-menu border-0 rounded-0 m-0">
-              <%= link_to "English", url_for(locale: 'en'), class: 'dropdown-item' %>
-              <%= link_to "Vietnamese", url_for(locale: 'vi'), class: 'dropdown-item' %>
+              <%= link_to "English", url_for(locale: "en"), class: "dropdown-item" %>
+              <%= link_to "Vietnamese", url_for(locale: "vi"), class: "dropdown-item" %>
             </div>
           </div>
         </div>
@@ -95,4 +83,3 @@
     </nav>
   </div>
 </div>
-<!-- Navbar End -->

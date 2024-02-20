@@ -42,12 +42,6 @@ puts 'Tour and tour details seed data has been created!'
     price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
     tour: tour
   )
-
-  # Create ImageTours
-  ImageTour.create(
-    image_url: Faker::LoremFlickr.image(size: '800x600', search_terms: ['tour']),
-    tour: tour
-  )
 end
 
 puts 'Tour seed data has been created!'
@@ -78,13 +72,6 @@ puts 'Booking seed data has been created!'
   )
 end
 puts 'Fake review data has been created!'
-10.times do
-  ImageReview.create(
-    image_url: Faker::Internet.url,
-    review: Review.all.sample
-  )
-end
-puts 'Fake image review data has been created!'
 
 10.times do
   TourFollowing.create(
