@@ -148,3 +148,6 @@ en:
     delete: "Delete"
     details: "Details"
     update: "Update"
+  reviews:
+    submit_button: "Send"
+    content: "Content"

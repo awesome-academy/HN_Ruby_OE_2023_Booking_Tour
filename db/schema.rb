@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_01_032446) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_20_021723) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -61,19 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_01_032446) do
     t.datetime "updated_at", null: false
     t.bigint "tour_detail_id", null: false
     t.bigint "user_id", null: false
+    t.boolean "reviewed", default: false
+    t.text "reason"
     t.index ["tour_detail_id"], name: "index_bookings_on_tour_detail_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "ckeditor_assets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "data_file_name", null: false
-    t.string "data_content_type"
-    t.integer "data_file_size"
-    t.string "data_fingerprint"
-    t.string "type", limit: 30
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -125,11 +116,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_01_032446) do
     t.index ["tour_category_id"], name: "index_tours_on_tour_category_id"
   end
 
-  create_table "uploads", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "username", null: false
     t.string "email", null: false
@@ -140,6 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_01_032446) do
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag booking do %>
+  <p class="mb-2">
+    <strong><%= t('bookings.show.status') %></strong>
+    <%= booking.status %>
+    <% if booking.pending? && (booking.user == current_user || current_user.admin?)  %>
+      <%= link_to t('bookings.canceltour'), cancel_booking_path(booking), class: 'btn btn-danger btn-sm ml-2' %>
+    <% end %>
+  </p>
+<% end %>

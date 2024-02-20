@@ -14,6 +14,15 @@ class Admin::BillsController < Admin::BaseController
     update_bill_frame
   end
 
+  def success
+    if @bill.success_booking(current_user)
+      flash.now[:success] = t("bookings.cancel_success")
+    else
+      flash.now[:error] = t("bookings.cancel_error")
+    end
+    update_bill_frame
+  end
+
   def confirm
     if @bill.confirm_booking(current_user)
       flash.now[:success] = t("bookings.confirm_success")

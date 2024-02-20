@@ -15,7 +15,8 @@ class Booking < ApplicationRecord
   enum status: {
     pending: 0,
     confirmed: 1,
-    canceled: 2
+    canceled: 2,
+    success: 3
   }
   private
 
@@ -35,6 +36,12 @@ class Booking < ApplicationRecord
     return unless pending? && current_user.admin?
 
     update(status: :confirmed)
+  end
+
+  def success_booking current_user
+    return unless confirmed? && current_user.admin?
+
+    update(status: :success)
   end
 
   def update_prices

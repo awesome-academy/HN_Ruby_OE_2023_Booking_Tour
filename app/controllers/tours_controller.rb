@@ -8,7 +8,9 @@ class ToursController < ApplicationController
                          items: Settings.tours_on_page)
   end
 
-  def show; end
+  def show
+    @pagy, @reviews = pagy(@tour.reviews.new_review)
+  end
   private
   def set_tour
     @tour = Tour.find_by(id: params[:id])

@@ -36,6 +36,14 @@
             </div>
           </div>
         </div>
+        <div class="bg-white p-3 m-2">
+          <%= turbo_frame_tag :comments do %>
+            <%= render 'reviews/reviews' %>
+          <% end %>
+          <%= link_to t('bookings.review_tour'), review_tour_path(@tour), class: 'btn btn-primary btn-sm ml-2' %>
+          <%= turbo_frame_tag :review_form do %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-3">
