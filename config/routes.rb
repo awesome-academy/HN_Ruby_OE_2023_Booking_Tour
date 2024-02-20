@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'
       put 'confirm_booking/:id' => 'bills#confirm', as: 'confirm_booking'
       put 'success_booking/:id' => 'bills#success', as: 'success_booking'
+      get 'filter_booking' => 'bills#filter', as: 'filter_bills'
     end
   end
 end

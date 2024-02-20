@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render "admin/bills/filter" %>
   <% if @bills.any? %>
     <% @bills.each do |bill| %>
       <%= render 'admin/bills/bill', bill: bill %>

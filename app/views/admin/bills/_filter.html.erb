@@ -1,0 +1,22 @@
+<%= form_with(url: admin_filter_bills_path, method: :get, class: "form-inline my-3") do |f| %>
+  <div class="form-group">
+    <%= f.label :tour_detail_id, t("bookings.filter.labels.tour_detail_id"), class: "mr-2" %>
+    <%= f.collection_select :tour_detail_id,TourDetail.all, :id,
+      lambda { |tour_detail| "#{tour_detail.tour.tour_name if tour_detail.tour.respond_to?(:tour_name)} - #{tour_detail.tour_detail_name}" },
+      { prompt: t("bookings.filter.labels.select_tour_detail"),
+      selected: params[:tour_detail_id] }, class: "form-control mr-2" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_start, t("bookings.filter.labels.date_start"), class: "mr-2" %>
+    <%= f.date_field :date_start, class: "form-control mr-2", value: params[:date_start] %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, t("bookings.filter.labels.date_start"), class: "mr-2" %>
+    <%= f.select(:status, Booking.statuses.keys.map { |status| [t("bookings.filter.statuses.#{status}"), status] },
+     { prompt: t("bookings.filter.labels.select_status"),
+      selected: params[:status] }, class: "form-control" )%>
+  </div>
+  <div class="form-group mx-3">
+    <%= f.submit t("bookings.filter.buttons.filter_bookings"), class: "btn btn-primary" %>
+  </div>
+<% end %>

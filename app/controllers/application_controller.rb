@@ -13,7 +13,20 @@ class ApplicationController < ActionController::Base
   end
 
   def check_user
-    redirect_to login_url unless logged_in?
-    redirect_to root_path if admin?
+    redirect_to login_url unless check_login? && check_user_role?
+  end
+
+  def check_login?
+    return true if logged_in?
+
+    flash[:warning] = t("controllers.errors.required_login")
+    false
+  end
+
+  def check_user_role?
+    return true unless admin?
+
+    flash[:warning] = t("controllers.errors.only_user_role")
+    false
   end
 end

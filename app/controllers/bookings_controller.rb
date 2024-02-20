@@ -32,7 +32,11 @@ class BookingsController < ApplicationController
   end
 
   def booking_history
-    render_index_page(current_user.bookings)
+    render_index_page(current_user.bookings.new_bills)
+  end
+
+  def booking_following
+    render_index_page(current_user.followed_tours.new_bills)
   end
 
   private

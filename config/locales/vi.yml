@@ -132,6 +132,7 @@ vi:
     show:
       heading: "Chi Tiết Đặt Phòng"
       booking_date: "Ngày Đặt Phòng:"
+      date_start: "Ngày Bắt đầu:"
       phone: "Điện Thoại:"
       numbers_people: "Số Người:"
       total_amount: "Tổng Tiền:"
@@ -152,6 +153,14 @@ vi:
     must_be_user: "Chỉ có người dùng mới đặt được tour"
     errors:
       date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
+    filter:
+      labels:
+        select_tour_detail: 'Chọn tour'
+        tour_detail_id: 'Mã chi tiết Tour'
+        date_start: 'Ngày bắt đầu'
+        status: 'Trạng thái'
+      buttons:
+        filter_bookings: 'Lọc Đặt Tour'
   dashboard:
     logo: "ThatDepTrai"
     link:

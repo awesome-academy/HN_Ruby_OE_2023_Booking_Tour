@@ -121,6 +121,14 @@ en:
     confirm_error: "Unable to confirm the booking."
     errors:
       date_in_fulture: "Date start must in fulture"
+    filter:
+      labels:
+        select_tour_detail: 'Select tour'
+        tour_detail_id: 'Tour Detail ID'
+        date_start: 'Date Start'
+        status: 'Status'
+      buttons:
+        filter_bookings: 'Filter Bookings'
   dashboard:
     logo: "ThatDepTrai"
     link:

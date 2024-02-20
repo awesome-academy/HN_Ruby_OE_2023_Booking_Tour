@@ -14,6 +14,10 @@
         <%= l(booking.created_at, format: :long) %>
       </p>
       <p class="mb-2">
+        <strong><%= t("bookings.show.date_start") %></strong>
+        <%= l(booking.date_start, format: :long) %>
+      </p>
+      <p class="mb-2">
         <strong><%= t("bookings.show.phone") %></strong>
         <%= booking.phone %>
       </p>

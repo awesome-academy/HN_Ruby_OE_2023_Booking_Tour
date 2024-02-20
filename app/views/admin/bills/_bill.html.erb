@@ -3,7 +3,7 @@
     <section class="booking-details bg-light p-4 rounded">
       <p class="mb-2">
         <strong><%= t("bookings.show.tour_detail_name") %></strong>
-        <%= link_to bill.tour_detail.tour_detail_name, admin_tour_path(bill.tour_detail.tour), class: "text-primary" %>
+        <%= link_to bill.tour_detail.tour_detail_name, admin_tour_path(bill.tour_detail.tour), class: "text-primary", data: { turbo: false }  %>
       </p>
       <p class="mb-2">
         <strong><%= t("bookings.show.detail_description") %></strong>
@@ -12,6 +12,10 @@
       <p class="mb-2">
         <strong><%= t("bookings.show.booking_date") %></strong>
         <%= l(bill.created_at, format: :long) %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.date_start") %></strong>
+        <%= l(bill.date_start, format: :long) %>
       </p>
       <p class="mb-2">
         <strong><%= t("bookings.show.phone") %></strong>
