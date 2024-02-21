@@ -1,7 +1,7 @@
 <div class="media mb-4">
   <%= image_tag review.user.avatar.variant(:avatar_icon), alt: "User Avatar", class: "img-fluid mr-3 mt-1"  if review.user.avatar&.attached?%>
   <div class="media-body">
-    <h6><a href="#"><%= review.user.username %></a> <small><i><%= review.created_at.strftime('%d %b %Y') %></i></small></h6>
+    <h6><a href="#"><%= review.user.username %></a> <small><i><%= review.created_at.strftime("%d %b %Y") %></i></small></h6>
     <p><%= review.review_text %></p>
   </div>
 </div>

@@ -1,13 +1,13 @@
-<%= turbo_frame_tag tour do %>
+<%= turbo_frame_tag dom_id tour do %>
   <div class="row">
     <div class="col-md-4">
       <% if !tour.followed_users.include?(current_user) %>
-        <%= link_to follow_tour_path(tour), class: "h5 m-0 text-decoration-none" do %>
+        <%= link_to follow_tour_path(tour), class: "h5 m-0 text-decoration-none", data: { turbo_method: :post } do %>
           <%= tour.tour_followings.count %>
           <i class="fas fa-heart"></i>
         <% end %>
       <% else %>
-        <%= link_to unfollow_tour_path(tour), class: "nav-link text-danger", data: { turbo_method: "delete" } do %>
+        <%= link_to unfollow_tour_path(tour), class: "nav-link text-danger", data: { turbo_method: :delete } do %>
           <%= tour.tour_followings.count %>
           <i class="fas fa-heart"></i>
         <% end %>

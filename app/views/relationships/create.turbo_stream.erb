@@ -1,0 +1,6 @@
+<%= turbo_stream.replace dom_id @tour  do%>
+  <%= render "tours/information", tour: @tour %>
+<%end%>
+<%= turbo_stream.append :flash do%>
+  <%= render "shared/flash_messages"%>
+<%end%>

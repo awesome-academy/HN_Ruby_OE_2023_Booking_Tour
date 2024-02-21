@@ -47,6 +47,7 @@ class Booking < ApplicationRecord
 
     update(status: :success)
   end
+
   private
 
   def update_prices

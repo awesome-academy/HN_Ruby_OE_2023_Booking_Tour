@@ -4,8 +4,7 @@ class ToursController < ApplicationController
   def home; end
 
   def index
-    @pagy, @tours = pagy(Tour.new_tour,
-                         items: Settings.tours_on_page)
+    @pagy, @tours = pagy(Tour.new_tour)
   end
 
   def show

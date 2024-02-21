@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get 'book/:id' => 'bookings#new', as: 'book'
     get 'booking_history' => 'bookings#booking_history', as:'history'
     get 'tour_following' => 'users#following_tour', as: 'tour_following'
-    get 'follow/:id' => 'relationships#create', as: 'follow_tour'
+    post 'follow/:id' => 'relationships#create', as: 'follow_tour'
     get 'review/:id' => 'reviews#new', as: 'review_tour'
     delete 'unfollow/:id' => 'relationships#destroy', as: 'unfollow_tour'
   end

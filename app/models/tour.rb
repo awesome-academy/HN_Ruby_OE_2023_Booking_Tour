@@ -11,15 +11,11 @@ class Tour < ApplicationRecord
   end
   has_many :tour_details, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :bookings, dependent: :destroy, through: :tour_details
   has_many :tour_followings,
            class_name: TourFollowing.name, dependent: :destroy
   has_many :followed_users, through: :tour_followings,
             source: :user
-  has_many :users_reviewed, through: :reviews,
-            source: :user
-  has_many :users_booked, through: :bookings,
-            source: :user
+  has_many :bookings, dependent: :destroy, through: :tour_details
   validates :tour_name, presence: true
   validates :image, presence: true, allow_nil: true
   validates :time_duration, presence: true
