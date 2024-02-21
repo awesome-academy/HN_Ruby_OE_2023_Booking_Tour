@@ -201,6 +201,8 @@ vi:
   reviews:
     submit_button: "Gửi"
     content: "Nội dung"
+    errors:
+      unique: "User chỉ có thể  review tour 1 lần"
   cancel_modal:
     title: "Hủy đặt tour"
     reason_label: "Lý do:"
