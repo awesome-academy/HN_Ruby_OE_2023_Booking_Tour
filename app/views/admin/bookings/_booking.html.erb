@@ -6,10 +6,6 @@
         <%= link_to booking.tour_detail.tour_detail_name, admin_tour_path(booking.tour_detail.tour), class: "text-primary", data: { turbo: false }  %>
       </p>
       <p class="mb-2">
-        <strong><%= t("bookings.show.detail_description") %></strong>
-        <%= booking.tour_detail.detail_description %>
-      </p>
-      <p class="mb-2">
         <strong><%= t("bookings.show.booking_date") %></strong>
         <%= l(booking.created_at, format: :long) %>
       </p>

@@ -20,11 +20,13 @@ class BookingsController < ApplicationController
 
   def cancel
     if @booking.pending?
-      flash[:error] = t("bookings.cancel_error")
-    elsif @booking.cancel_booking
-      flash[:success] = t("bookings.cancel_success")
+      if @booking.cancel_booking
+        flash[:success] = t("bookings.cancel_success")
+      else
+        flash[:danger] = t("bookings.cancel_error")
+      end
     else
-      flash[:error] = t("bookings.cancel_error")
+      flash[:danger] = t("bookings.cancel_error")
     end
   end
 

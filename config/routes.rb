@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'home' => 'tours#index'
     post 'login' => 'sessions#create'
     delete 'logout' =>'sessions#destroy'
-    get 'cancel_booking/:id' => 'bookings#cancel', as: 'cancel_booking'
+    post 'cancel_booking/:id' => 'bookings#cancel', as: 'cancel_booking'
     get 'signup' => 'users#new'
     get 'book/:id' => 'bookings#new', as: 'book'
     get 'booking_history' => 'bookings#booking_history', as:'history'

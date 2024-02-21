@@ -1,9 +1,9 @@
-<%= turbo_frame_tag booking do %>
+<%= turbo_frame_tag dom_id booking do %>
   <div class="container mt-4">
     <section class="booking-details bg-light p-4 rounded">
       <p class="mb-2">
         <strong><%= t("bookings.show.tour_detail_name") %></strong>
-        <%= link_to booking.tour_detail.tour_detail_name, tour_path(booking.tour_detail.tour), class: "text-primary" %>
+        <%= link_to booking.tour_detail.tour_detail_name, tour_path(booking.tour_detail.tour), class: "text-primary", data: { turbo: false } %>
       </p>
       <p class="mb-2">
         <strong><%= t("bookings.show.detail_description") %></strong>
@@ -33,7 +33,7 @@
         <strong><%= t("bookings.show.status") %></strong>
         <%= booking.status %>
         <% if booking.pending? && (booking.user == current_user || current_user.admin?)  %>
-          <%= link_to t("bookings.canceltour"), cancel_booking_path(booking), class: "btn btn-danger btn-sm ml-2" %>
+          <%= link_to t("bookings.canceltour"), cancel_booking_path(booking), class: "btn btn-danger btn-sm ml-2", data: { turbo_method: :post } %>
         <% end %>
       </p>
       <% if booking.canceled? %>
