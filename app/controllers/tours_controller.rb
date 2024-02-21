@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: %i(show)
+  before_action :find_tour, only: %i(show)
 
   def home; end
 
@@ -11,7 +11,7 @@ class ToursController < ApplicationController
     @pagy, @reviews = pagy(@tour.reviews.new_review)
   end
   private
-  def set_tour
+  def find_tour
     @tour = Tour.find_by(id: params[:id])
     return if @tour
 

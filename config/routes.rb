@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :tours, :tour_details, :users, :sessions, :bookings, :relationships, :reviews
     root 'tours#home'
     get 'login' => 'sessions#new'
-    get 'home' => 'tours#home'
+    get 'home' => 'tours#index'
     post 'login' => 'sessions#create'
     delete 'logout' =>'sessions#destroy'
     get 'cancel_booking/:id' => 'bookings#cancel', as: 'cancel_booking'

@@ -11,10 +11,10 @@ class Admin::ToursController < Admin::BaseController
 
   def update
     if @tour.update(tour_params)
-      flash[:success] = t("tourcontroller.flash_messages.edit_success")
+      flash[:success] = t("tourcontroller.flash_messages.edit_message")
       redirect_to admin_tour_path(@tour)
     else
-      flash[:danger] = t("tourcontroller.flash_messages.edit_failure")
+      flash[:danger] = t("tourcontroller.flash_messages.edit_fail_message")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -25,7 +25,7 @@ class Admin::ToursController < Admin::BaseController
       flash[:success] = t("tourcontroller.flash_messages.create_success")
       redirect_to admin_tour_path(@tour)
     else
-      flash[:danger] = t("tourcontroller.flash_messages.create_failure")
+      flash[:danger] = t("tourcontroller.flash_messages.create_fail_message")
       render :new, status: :unprocessable_entity
     end
   end

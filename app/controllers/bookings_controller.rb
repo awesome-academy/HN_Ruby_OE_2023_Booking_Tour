@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :check_user,
                 only: %i(new create booking_history)
-  before_action :set_tour_detail, only: %i(new)
+  before_action :load_tour_detail, only: %i(new)
   before_action :find_booking, only: %i(show cancel)
   before_action :check_owner, only: %i(cancel)
   def new
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
 
   private
   def check_owner
-    set_booking
+    find_booking
     return if current_user == @booking.user
 
     flash[:warning] = t("controllers.errors.requied_login")

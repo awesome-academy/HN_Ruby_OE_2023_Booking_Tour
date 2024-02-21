@@ -6,6 +6,9 @@
     <%= t("bookings.form.price") %>
     <%= number_with_precision(@booking.tour_detail.price, precision: 0, delimiter: ",") %>
   </div>
+  <p class="mb-2">
+    <%= @booking.tour_detail.detail_description %>
+  </p>
   <div class="form-group">
     <%= form.label :date_start, t("bookings.form.date_start") %>
     <%= form.date_field :date_start, class: "form-control" %>

@@ -78,7 +78,7 @@ vi:
     select_category: "Chọn danh mục"
   tourcontroller:
     flash_messages:
-      create_message: "Tạo tour thành công !!!"
+      create_success: "Tạo tour thành công !!!"
       create_fail_message: "Tạo tour không thành công !!!"
       edit_message: "Cập nhật tour thành công !!!"
       edit_fail_message: "Cập nhật tour không thành công !!!"
