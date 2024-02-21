@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
   before_action :set_tour_detail, only: %i(new)
   before_action :find_booking, only: %i(show cancel)
   before_action :check_owner, only: %i(cancel)
-  after_action :update_bill_frame, only: %i(cancel)
   def new
     @booking = build_booking
   end
@@ -32,7 +31,8 @@ class BookingsController < ApplicationController
   def show; end
 
   def booking_history
-    render_index_page(current_user.bookings)
+    @pagy, @bookings = pagy(current_user.bookings.new_bookings)
+    render "bookings/index"
   end
 
   private
@@ -42,11 +42,6 @@ class BookingsController < ApplicationController
 
     flash[:warning] = t("controllers.errors.requied_login")
     redirect_to root_path
-  end
-
-  def render_index_page bookings
-    @pagy, @bookings = pagy(bookings)
-    render "bookings/index"
   end
 
   def load_tour_detail
@@ -75,14 +70,5 @@ class BookingsController < ApplicationController
       user: current_user,
       numbers_people: Settings.peoples_booking_tours
     )
-  end
-
-  def update_bill_frame
-    render turbo_stream: [
-      turbo_stream.replace(@booking, partial: "bookings/status",
-locals: {booking: @booking}),
-      turbo_stream.append(:flash, partial: "shared/flash_messages",
-                          locals: {flash:})
-    ]
   end
 end

@@ -41,8 +41,12 @@
             <%= render 'reviews/reviews' %>
           <% end %>
           <%= turbo_frame_tag :review_form do %>
-            <% if logged_in? && !@tour.users_reviewed.include?(current_user) && @tour.users_booked.include?(current_user) %>
-              <%= link_to t('bookings.review_tour'), review_tour_path(@tour), class: 'btn btn-primary btn-sm ml-2' %>
+            <% if logged_in? && !@tour.users_reviewed.loaded? && @tour.users_booked.loaded? %>
+              <% users_reviewed = @tour.users_reviewed.includes(:reviews) %>
+              <% users_booked = @tour.users_booked.includes(:bookings) %>
+              <% if users_booked.include?(current_user) && !users_reviewed.include?(current_user) %>
+                <%= link_to t('bookings.review_tour'), review_tour_path(@tour), class: 'btn btn-primary btn-sm ml-2' %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

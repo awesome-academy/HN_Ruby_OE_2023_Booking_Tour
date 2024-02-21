@@ -13,21 +13,20 @@ class ApplicationController < ActionController::Base
   end
 
   def check_user
-    check_login
-    check_user_role
+    redirect_to login_url unless check_login? && check_user_role?
   end
 
-  def check_login
-    return if logged_in?
+  def check_login?
+    return true if logged_in?
 
-    flash[:warning] = t("controllers.errors.requied_login")
-    redirect_to login_url
+    flash[:warning] = t("controllers.errors.required_login")
+    false
   end
 
-  def check_user_role
-    return if admin?
+  def check_user_role?
+    return true unless admin?
 
     flash[:warning] = t("controllers.errors.only_user_role")
-    redirect_to login_url
+    false
   end
 end

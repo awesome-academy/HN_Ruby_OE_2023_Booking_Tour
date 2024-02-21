@@ -61,8 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_20_091852) do
     t.datetime "updated_at", null: false
     t.bigint "tour_detail_id", null: false
     t.bigint "user_id", null: false
-    t.boolean "reviewed", default: false
-    t.text "reason"
+    t.string "reason"
     t.index ["tour_detail_id"], name: "index_bookings_on_tour_detail_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

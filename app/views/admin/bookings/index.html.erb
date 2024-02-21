@@ -1,0 +1,11 @@
+<div class="container">
+  <%= render "admin/bookings/filter" %>
+  <% if @bookings.any? %>
+    <% @bookings.each do |booking| %>
+      <%= render "admin/bookings/booking", booking: booking %>
+    <% end %>
+    <div class="d-flex justify-content-center">
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  <% end %>
+</div>

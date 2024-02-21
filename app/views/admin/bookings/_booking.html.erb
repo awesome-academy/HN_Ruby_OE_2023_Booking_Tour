@@ -3,7 +3,7 @@
     <section class="booking-details bg-light p-4 rounded">
       <p class="mb-2">
         <strong><%= t("bookings.show.tour_detail_name") %></strong>
-        <%= link_to booking.tour_detail.tour_detail_name, tour_path(booking.tour_detail.tour), class: "text-primary" %>
+        <%= link_to booking.tour_detail.tour_detail_name, admin_tour_path(booking.tour_detail.tour), class: "text-primary", data: { turbo: false }  %>
       </p>
       <p class="mb-2">
         <strong><%= t("bookings.show.detail_description") %></strong>
@@ -32,9 +32,20 @@
       <p class="mb-2">
         <strong><%= t("bookings.show.status") %></strong>
         <%= booking.status %>
-        <% if booking.pending? && (booking.user == current_user || current_user.admin?)  %>
-          <%= link_to t("bookings.canceltour"), cancel_booking_path(booking), class: "btn btn-danger btn-sm ml-2" %>
-        <% end %>
+        <div class="d-flex">
+          <% if booking.pending? %>
+            <%= link_to admin_cancel_booking_path(booking),data: {controller: "cancel-booking" }, class: 'btn btn-danger btn-sm ml-2' do %>
+              <%= t('bookings.canceltour') %>
+            <%end%>
+            <%= button_to t("bookings.confirmtour"), admin_confirm_booking_path(booking), method: :put, class: "btn btn-primary btn-sm ml-2", data: { confirm: "Are you sure you want to confirm this booking?" } %>
+          <% end %>
+          <% if booking.confirmed? %>
+            <%= link_to admin_cancel_booking_path(booking),data: {controller: "cancel-booking" }, class: 'btn btn-danger btn-sm ml-2' do %>
+              <%= t('bookings.canceltour') %>
+            <%end%>
+            <%= button_to t('bookings.Successtour'), admin_success_booking_path(booking), method: :put, class: 'btn btn-success btn-sm ml-2' %>
+          <% end %>
+        </div>
       </p>
       <% if booking.canceled? %>
         <p class="mb-2">

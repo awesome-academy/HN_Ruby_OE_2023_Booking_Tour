@@ -17,13 +17,14 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     scope "(:locale)", locale: /en|vi/ do
-      resources :tours, :tour_details, :bills, :homes, :tour_categories
+      resources :tours, :tour_details, :bookings, :homes, :tour_categories
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'
-      put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'
-      put 'confirm_booking/:id' => 'bills#confirm', as: 'confirm_booking'
-      put 'success_booking/:id' => 'bills#success', as: 'success_booking'
-      get 'filter_booking' => 'bills#filter', as: 'filter_bills'
+      get 'cancel_booking/:id' => 'bookings#cancel_modal', as: 'cancel_booking'
+      post 'cancel_booking/:id' => 'bookings#cancel', as: 'submit_cancel_booking'
+      put 'confirm_booking/:id' => 'bookings#confirm', as: 'confirm_booking'
+      put 'success_booking/:id' => 'bookings#success', as: 'success_booking'
+      get 'filter_booking' => 'bookings#filter', as: 'filter_bookings'
     end
   end
 end

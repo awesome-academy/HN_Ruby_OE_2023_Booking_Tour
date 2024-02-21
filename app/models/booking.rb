@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
             numericality: {only_integer: true,
                            greater_than: Settings.peoples_booking_tours_min}
   validate :booking_date_in_future
-  scope :new_bills, ->{order(created_at: :desc)}
+  scope :new_bookings, ->{order(created_at: :desc)}
   scope :by_tour_and_date, lambda {|tour_detail_id, date_start, status|
                              query = all
 
@@ -31,13 +31,6 @@ class Booking < ApplicationRecord
     canceled: 2,
     success: 3
   }
-  private
-
-  def booking_date_in_future
-    return unless date_start.present? && date_start <= Time.zone.now
-
-    errors.add(:date_start, I18n.t("bookings.errors.date_in_fulture"))
-  end
 
   def cancel_booking
     update(status: :canceled)
@@ -54,6 +47,7 @@ class Booking < ApplicationRecord
 
     update(status: :success)
   end
+  private
 
   def update_prices
     self.total_amount = tour_detail.price * numbers_people
@@ -61,5 +55,11 @@ class Booking < ApplicationRecord
 
   def status_booking
     self.status = :pending
+  end
+
+  def booking_date_in_future
+    return unless date_start.present? && date_start <= Time.zone.now
+
+    errors.add(:date_start, I18n.t("bookings.errors.date_in_fulture"))
   end
 end

@@ -1,4 +1,4 @@
-<%= form_with(url: admin_filter_bills_path, method: :get, class: "form-inline my-3") do |f| %>
+<%= form_with(url: admin_filter_bookings_path, method: :get, class: "form-inline my-3") do |f| %>
   <div class="form-group">
     <%= f.label :tour_detail_id, t("bookings.filter.labels.tour_detail_id"), class: "mr-2" %>
     <%= f.collection_select :tour_detail_id,TourDetail.all, :id,

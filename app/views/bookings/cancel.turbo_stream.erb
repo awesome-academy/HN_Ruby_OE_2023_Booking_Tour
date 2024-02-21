@@ -1,0 +1,6 @@
+<%= turbo_stream.replace dom_id(@booking) do%>
+  <%= render "bookings/booking", booking: @booking %>
+<%end%>
+<%= turbo_stream.append :flash do%>
+  <%= render "shared/flash_messages"%>
+<%end%>

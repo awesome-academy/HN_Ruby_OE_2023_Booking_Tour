@@ -11,8 +11,9 @@
   <body>
     <%= render "shared/flash_messages"%>
     <%= render "admin/layouts/header"%>
-    <div>
-      <%= render "admin/layouts/side_navbar"%>
+    <%= turbo_frame_tag :remote_modal %>
+    <div class="row">
+      <%= render 'admin/layouts/side_navbar'%>
       <%= yield %>
     </div>
   </body>
