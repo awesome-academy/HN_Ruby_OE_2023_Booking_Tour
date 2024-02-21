@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     scope "(:locale)", locale: /en|vi/ do
-      resources :tours, :tour_details, :bills, :homes
+      resources :tours, :tour_details, :bills, :homes, :tour_categories
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'
       put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'

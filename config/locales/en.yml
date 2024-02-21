@@ -70,7 +70,6 @@ en:
     navbar:
       edit: "Edit"
       tour_details: "Tour Details"
-      view_details: "View this tour"s details"
       add_details: "Add new tour details"
       delete: "Deleted"
   tour_details:
@@ -139,3 +138,19 @@ en:
       booking_not_found: "booking not found"
       tour_detail_not_found: "tour detail not found"
       only_admin_role: "this function only use by admins"
+  tour_categories:
+    number_of_tours: "Number of Tours"
+    form:
+      category_name: "Category Name:"
+      submit_button: "Save"
+    flash_messages:
+      edit_success: "Tour category has been successfully updated."
+      edit_failure: "Unable to update tour category."
+      create_success: "Tour category has been successfully created."
+      create_failure: "Unable to create tour category."
+      destroy_success: "Tour category has been successfully deleted."
+      destroy_failure: "Unable to delete tour category."
+      not_found: "Tour category not found."
+      delete: "Delete Category"
+      details: "Details"
+      update: "Update"

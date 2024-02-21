@@ -1,5 +1,5 @@
 class Admin::ToursController < Admin::BaseController
-  before_action :set_tour, only: %i(show edit update destroy)
+  before_action :find_tour, only: %i(show edit update destroy)
 
   def index
     @pagy, @tours = pagy(Tour.new_tour, items: Settings.tours_on_page)
@@ -50,9 +50,8 @@ class Admin::ToursController < Admin::BaseController
     params.require(:tour).permit(Tour::CREATE_PARAMS)
   end
 
-  def set_tour
+  def find_tour
     @tour = Tour.find_by(id: params[:id])
-
     return if @tour
 
     flash[:success] = t("tour_details.message.not_found")

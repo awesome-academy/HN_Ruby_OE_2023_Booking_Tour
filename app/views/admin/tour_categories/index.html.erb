@@ -1,0 +1,10 @@
+<div class="container py-5">
+  <div class="row pb-3">
+    <% @tour_categories.each do |tour_category| %>
+      <%= render "admin/tour_categories/tour_category", tour_category: tour_category %>
+    <% end %>
+    <div class="col-12 mt-2 d-flex justify-content-center">
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  </div>
+</div>
