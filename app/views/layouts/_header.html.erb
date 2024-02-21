@@ -61,6 +61,12 @@
               </a>
               <div class="dropdown-menu border-0 rounded-0 m-0">
                 <%= link_to t("user.headers.account_link.information"), current_user, class: "dropdown-item" %>
+                <% if admin? %>
+                  <%= link_to t("user.headers.admin_link.admin_home"), admin_dashboard_path, class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to t("user.headers.account_link.history_booking"), history_path, class: "dropdown-item" %>
+                  <%= link_to t("user.headers.account_link.fllowing_booking"), history_path, class: "dropdown-item" %>
+                <% end %>
                 <%= link_to t("user.headers.account_link.logout"), logout_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
               </div>
             <% else %>

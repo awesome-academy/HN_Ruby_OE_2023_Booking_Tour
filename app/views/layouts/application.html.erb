@@ -9,11 +9,9 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render 'layouts/header'%>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
+    <%= render "layouts/header"%>
+    <%= render "shared/flash_messages"%>
     <%= yield %>
-    <%= render 'layouts/footer'%>
+    <%= render "layouts/footer"%>
   </body>
 </html>

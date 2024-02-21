@@ -1,8 +1,8 @@
 <header id="header" class="header d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
-    <%= link_to "/admin", class: "logo d-flex align-items-center" do %>
+    <%= link_to admin_dashboard_path, class: "logo d-flex align-items-center" do %>
       <%= image_tag("/assets/img/logo.png", alt: "") %>
-      <span class="d-none d-lg-block">Thatdeptrai</span>
+      <span class="d-none d-lg-block"><%= t("dashboard.logo") %></span>
     <% end %>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div>

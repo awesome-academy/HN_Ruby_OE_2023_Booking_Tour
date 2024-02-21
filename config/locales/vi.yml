@@ -5,42 +5,45 @@ vi:
   user:
     headers:
       link:
-        home: 'Trang chủ'
-        tour: 'Tour'
-        your_tour: 'Tour của bạn'
+        home: "Trang chủ"
+        tour: "Tour"
+        your_tour: "Tour của bạn"
       admin_link:
-        admin: 'Quản trị'
+        admin: "Quản trị"
         user: "Người dùng"
         tour: "Tour"
         bill: "Hóa đơn"
         tour_comfirm: "Xác nhận tour"
         new_tour: "Thêm tour mới"
+        admin_home: "Dashboard"
       account_link:
-        account: 'Tài khoản'
-        information: 'Thông tin tài khoản'
-        logout: 'Đăng xuất'
-        login: 'Đăng nhập'
-        register: 'Đăng Ký'
+        account: "Tài khoản"
+        information: "Thông tin tài khoản"
+        history_booking: "Các tour đã đặt"
+        fllowing_booking: "Các tour đã theo dõi"
+        logout: "Đăng xuất"
+        login: "Đăng nhập"
+        register: "Đăng Ký"
     loginpage:
-      signin: 'Đăng Nhập'
-      signup: 'Đăng ký'
-      email_label: 'Địa Chỉ Email'
-      email: 'Email'
-      password: 'Mật khẩu'
-      password_label: 'Mật Khẩu'
-      save_password: 'Nhớ mật khẩu'
-      forgot: 'Quên mật khẩu'
+      signin: "Đăng Nhập"
+      signup: "Đăng ký"
+      email_label: "Địa Chỉ Email"
+      email: "Email"
+      password: "Mật khẩu"
+      password_label: "Mật Khẩu"
+      save_password: "Nhớ mật khẩu"
+      forgot: "Quên mật khẩu"
       not_found_user: "Tài khoản không tồn tại"
     signuppate:
-      email_label: 'Địa Chỉ Email'
-      user_label: 'Tên'
-      email: 'Email'
-      phone: 'SDT'
-      password: 'Mật khẩu'
-      password_label: 'Mật Khẩu'
-      password_confirm_label: 'Nhập lại Mật Khẩu'
-      save_password: 'Nhớ mật khẩu'
-      forgot: 'Quên mật khẩu'
+      email_label: "Địa Chỉ Email"
+      user_label: "Tên"
+      email: "Email"
+      phone: "SDT"
+      password: "Mật khẩu"
+      password_label: "Mật Khẩu"
+      password_confirm_label: "Nhập lại Mật Khẩu"
+      save_password: "Nhớ mật khẩu"
+      forgot: "Quên mật khẩu"
       not_found_user: "Tài khoản không tồn tại"
     showpage:
       bookings: "Lịch sử đặt Tour"
@@ -143,3 +146,26 @@ vi:
     cancel_error: "Không thể hủy đặt tour."
     confirm_success: "Xác nhận đặt tour thành công."
     confirm_error: "Không thể xác nhận đặt tour."
+    must_be_user: "Chỉ có người dùng mới đặt được tour"
+    errors:
+      date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
+  dashboard:
+    logo: "ThatDepTrai"
+    link:
+      tour: "tour"
+      tours: "Danh sách tours"
+      new_tours": "Thêm tour mới"
+      bill: "Hóa Đơn"
+      bills: "Danh sách đăt tour"
+      category: "Danh sách danh mục"
+      categorys: "Danh sách danh mục"
+      new_categorys": "Thêm danh mục"
+  controllers:
+    errors:
+      user_not_found: "Không tìm thấy người dùng"
+      required_login: "Bạn phải đăng nhập"
+      only_user_role: "Chức năng này chỉ dành cho người dùng"
+      bill_not_found: "Hóa đơn không tồn tại"
+      booking_not_found: "Đặt tour không tồn tại"
+      tour_detail_not_found: "Chi tiết tour không tồn tại"
+      only_admin_role: "Chức năng này chỉ dành cho quản trị viên"

@@ -1,19 +1,31 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
   <div class="sidebar-sticky pt-3">
     <ul class="nav flex-column">
-      <li class="nav-item">
-        <div class="btn-group dropright">
-          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= t("user.headers.admin_link.tour")%>
-          </button>
-          <div class="dropdown-menu">
-            <%= link_to t("user.headers.admin_link.tour"), admin_tours_path, class: "nav-link" %>
-            <%= link_to t("user.headers.admin_link.new_tour"), new_admin_tour_path, class: "nav-link" %>
-          </div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("dashboard.link.tour")%>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to t("dashboard.link.tours"), admin_tours_path, class: "dropdown-item" %>
+          <%= link_to t("dashboard.link.new_tours"), new_admin_tour_path, class: "dropdown-item" %>
         </div>
       </li>
-      <li class="nav-item">
-        <%= link_to t("user.headers.admin_link.user"), admin_users_path, class: "nav-link" %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("dashboard.link.bill")%>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to t("dashboard.link.bills"), admin_bills_path, class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= t("dashboard.link.category")%>
+        </a>
+        <div class="dropdown-menu">
+          <%= link_to t("dashboard.link.categorys"), admin_tours_path, class: "dropdown-item" %>
+          <%= link_to t("dashboard.link.new_categorys"), new_admin_tour_path, class: "dropdown-item" %>
+        </div>
       </li>
     </ul>
   </div>

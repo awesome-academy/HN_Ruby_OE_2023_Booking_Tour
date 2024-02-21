@@ -1,0 +1,40 @@
+<%= turbo_frame_tag bill do %>
+  <div class="container mt-4">
+    <section class="booking-details bg-light p-4 rounded">
+      <p class="mb-2">
+        <strong><%= t("bookings.show.tour_detail_name") %></strong>
+        <%= link_to bill.tour_detail.tour_detail_name, admin_tour_path(bill.tour_detail.tour), class: "text-primary" %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.detail_description") %></strong>
+        <%= bill.tour_detail.detail_description %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.booking_date") %></strong>
+        <%= l(bill.created_at, format: :long) %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.phone") %></strong>
+        <%= bill.phone %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.numbers_people") %></strong>
+        <%= bill.numbers_people %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.total_amount") %></strong>
+        <%= number_to_currency(bill.total_amount, unit: "₫", format: "%n %u", precision: 0) %>
+      </p>
+      <p class="mb-2">
+        <strong><%= t("bookings.show.status") %></strong>
+        <%= bill.status %>
+        <% if bill.pending? && (bill.user == current_user || current_user.admin?)  %>
+          <%= button_to t("bookings.canceltour"), admin_cancel_booking_path(bill), method: :put, class: "d-flex btn btn-danger btn-sm ml-2", data: { confirm: "Are you sure you want to confirm this booking?" } %>
+        <% end %>
+        <% if bill.pending? && current_user.admin? %>
+          <%= button_to t("bookings.confirmtour"), admin_confirm_booking_path(bill), method: :put, class: "d-flex btn btn-primary btn-sm ml-2", data: { confirm: "Are you sure you want to confirm this booking?" } %>
+        <% end %>
+      </p>
+    </section>
+  </div>
+<% end %>

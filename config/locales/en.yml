@@ -5,30 +5,31 @@ en:
   user:
     headers:
       link:
-        home: 'Home'
-        tour: 'Tour'
-        your_tour: 'Your Tour'
+        home: "Home"
+        tour: "Tour"
+        your_tour: "Your Tour"
       admin_link:
-        admin: 'Admin'
+        admin: "Admin"
         user: "User"
         tour: "Tour"
         bill: "Bill"
         tour_comfirm: "Tour Comfirm"
         new_tour: "Add tour"
+        admin_home: "Dashboard"
       account_link:
-        account: 'account'
-        logout: 'Logout'
-        login: 'Login'
-        register: 'Register'
+        account: "account"
+        logout: "Logout"
+        login: "Login"
+        register: "Register"
     loginpage:
-      signin: 'Sign in'
-      signup: 'Sign up'
-      email_label: 'Your email'
-      email: 'email'
-      password: 'Password'
-      password_label: 'Your password'
-      save_password: 'Save password'
-      forgot: 'Forgot'
+      signin: "Sign in"
+      signup: "Sign up"
+      email_label: "Your email"
+      email: "email"
+      password: "Password"
+      password_label: "Your password"
+      save_password: "Save password"
+      forgot: "Forgot"
       not_found_user: "Not found user"
   footer:
     brand_name: "TRAVELER"
@@ -69,7 +70,7 @@ en:
     navbar:
       edit: "Edit"
       tour_details: "Tour Details"
-      view_details: "View this tour's details"
+      view_details: "View this tour"s details"
       add_details: "Add new tour details"
       delete: "Deleted"
   tour_details:
@@ -108,11 +109,33 @@ en:
         detail_description: "Detail Description:"
         tour_detail_name: "Tour Detail Name:"
         max_people: "Max People:"
-  create_success: "Booking created successfully!"
-  view_detail: "View Detail"
-  canceltour: "Cancel Tour"
-  confirmtour: "confirm tour"
-  cancel_success: "Booking canceled successfully."
-  cancel_error: "Unable to cancel the booking."
-  confirm_success: "Booking confirmed successfully."
-  confirm_error: "Unable to confirm the booking."
+    create_success: "Booking created successfully!"
+    view_detail: "View Detail"
+    canceltour: "Cancel Tour"
+    confirmtour: "confirm tour"
+    cancel_success: "Booking canceled successfully."
+    cancel_error: "Unable to cancel the booking."
+    confirm_success: "Booking confirmed successfully."
+    confirm_error: "Unable to confirm the booking."
+    errors:
+      date_in_fulture: "Date start must in fulture"
+  dashboard:
+    logo: "ThatDepTrai"
+    link:
+      tour: "Tour"
+      tours: "List of Tour"
+      new_tours": "new Tour"
+      bill: "Bill"
+      bills: "List of Bill"
+      category: "Category"
+      categorys: "List of Category"
+      new_categorys": "new Category"
+  controllers:
+    errors:
+      user_not_found: "User not found"
+      requied_login: "you must login"
+      only_user_role: "this function only use by users"
+      bill_not_found: "bill not found"
+      booking_not_found: "booking not found"
+      tour_detail_not_found: "tour detail not found"
+      only_admin_role: "this function only use by admins"

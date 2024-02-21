@@ -3,3 +3,5 @@ tours_on_page: 10
 default_email: 'thatv1212@gmail.com'
 high_avatar_icon: 24
 width_avatar_icon: 24
+peoples_booking_tours: 1
+peoples_booking_tours_min: 0

@@ -1,0 +1,10 @@
+<div class="container">
+  <% if @bills.any? %>
+    <% @bills.each do |bill| %>
+      <%= render "admin/bills/bill", bill: bill %>
+    <% end %>
+    <div class="d-flex justify-content-center">
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  <% end %>
+</div>
