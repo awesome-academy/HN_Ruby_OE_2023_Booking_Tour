@@ -33,6 +33,12 @@ class Booking < ApplicationRecord
       .group(:status)
       .count
   }
+  scope :overtime_booking, (lambda do
+    where(status: :pending).where("date_start >= ?", Time.zone.now)
+  end)
+  scope :success_booking, (lambda do
+    where(status: :confirmed).where("end_date < ?", Time.zone.now)
+  end)
   before_create :update_prices, :status_booking
   before_save :caculate_end_date
   enum status: {
@@ -72,6 +78,13 @@ class Booking < ApplicationRecord
     ConfirmBookingMailJob.perform_async(id)
   end
 
+  def successed_booking
+    reload
+    return I18n.t("bookings.errors.update_status_fail") unless confirmed?
+
+    successed!
+    SuccessBookingMailJob.perform_async(id)
+  end
   private
 
   def booking_date_in_future

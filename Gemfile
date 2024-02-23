@@ -86,8 +86,6 @@ group :test do
   gem "webdrivers"
 end
 gem "groupdate", "~> 6.4"
-
-gem "sidekiq", "~> 7.2"
-
 gem "redis", "~> 5.1"
+gem "sidekiq", "~> 7.2"
 gem "whenever", "~> 1.0", require: false

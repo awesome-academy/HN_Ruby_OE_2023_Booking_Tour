@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(show)
 
-  def index
-    @pagy, @users = pagy(User.new_user)
-  end
-
   def following_tour
     @q = ransack_params
     @pagy, @tours = pagy(current_user.followed_tours)
