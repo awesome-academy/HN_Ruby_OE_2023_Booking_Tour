@@ -7,3 +7,4 @@ peoples_booking_tours: 1
 peoples_booking_min: 1
 time_during_min: 1
 price_min: 0
+host: "localhost:3000"
