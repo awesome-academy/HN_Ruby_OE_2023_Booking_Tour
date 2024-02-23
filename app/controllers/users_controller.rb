@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def following_tour
+    @q = ransack_params
     @pagy, @tours = pagy(current_user.followed_tours)
     render "tours/index"
   end
@@ -19,6 +20,10 @@ class UsersController < ApplicationController
     return if @user
 
     redirect_to users_path
+  end
+
+  def ransack_params
+    Tour.ransack(params[:query])
   end
 
   def user_params

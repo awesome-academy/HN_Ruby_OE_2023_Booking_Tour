@@ -238,3 +238,9 @@ vi:
     welcome: 'Chào mừng %{email}!'
     confirm_email: 'Bạn có thể xác nhận email tài khoản của mình qua liên kết dưới đây:'
     confirm_account: 'Xác nhận tài khoản của tôi'
+  search:
+    placeholder:
+      tour_name: "Tìm kiếm theo tên Tour"
+  buttons:
+    submit: "Gửi"
+    clear: "Xóa"
