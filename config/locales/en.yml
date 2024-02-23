@@ -75,7 +75,7 @@ en:
     follow_unsuccess: "Failed to follow tour"
     unfollow_success: "Unfollowed tour successfully"
     unfollow_unsuccess: "Failed to unfollow tour"
-    follow_not_exit: "You haven't followed this tour"
+    follow_not_exit: "You haven"t followed this tour"
     follow_exit: "You have followed this tour"
     tour_name: "Tour Name"
     time_duration: "Duration"
@@ -130,8 +130,10 @@ en:
       tour_detail_name: "Tour Detail Name:"
       max_people: "Maximum People:"
       back_to_bookings: "Back to Bookings"
-      date_start_to: "Start Date From"
-      date_start_form: "Start Date To"
+      date_start_to: "date start to"
+      date_start_form: "date start form"
+      search: "search"
+      clear_search: "clear search"
     create_success: "Tour booked successfully!"
     view_detail: "View details"
     canceltour: "Cancel Tour"
@@ -210,16 +212,16 @@ en:
     language: "Language"
     english: "English"
     vietnamese: "Vietnamese"
-  resend_confirmation: "Didn't receive confirmation instructions?"
-  resend_unlock_instructions: "Didn't receive unlock instructions?"
+  resend_confirmation: "Didn"t receive confirmation instructions?"
+  resend_unlock_instructions: "Didn"t receive unlock instructions?"
   sign_in_with: "Sign in with %{provider}"
   resend_confirmation_button:
     title: "Resend Confirmation Instructions"
     label_email: "Email"
   welcome_email:
-    welcome: 'Welcome %{email}!'
-    confirm_email: 'You can confirm your account email through the link below:'
-    confirm_account: 'Confirm my account'
+    welcome: "Welcome %{email}!"
+    confirm_email: "You can confirm your account email through the link below:"
+    confirm_account: "Confirm my account"
   search:
     placeholder:
       tour_name: "Search by Tour Name"
@@ -240,3 +242,15 @@ en:
     reviews:
       update: "Update Review"
       new: "Add Review"
+  home:
+    title: "Statistical"
+    new_account: "New Account"
+    new_booking: "New Booking"
+    status_of_booking: "Status of Booking"
+    income: "Income"
+    this_month: "This Month"
+    last_month: "Last Month"
+    this_year: "This Year"
+    filter: "Filter"
+    date_order: "End date must be greater than start date."
+    invalid_format: "Invalid date format. Please provide valid dates."

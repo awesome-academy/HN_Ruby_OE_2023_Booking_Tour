@@ -8,28 +8,15 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
-          <%= t("language.language" )%>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-          <li>
-            <%= link_to t("language.english"), url_for(locale: "en"), class: "dropdown-item" %>
-          </li>
-          <li>
-            <%= link_to t("language.vietnamese"), url_for(locale: "vi"), class: "dropdown-item" %>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown pe-3">
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <%= image_tag current_user.avatar.variant(:avatar_icon), alt: "Profile", class: "rounded-circle" if current_user.avatar&.attached? %>
           <span class="d-none d-md-block dropdown-toggle ps-2">
             <%= current_user.username %>
           </span>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="profileDropdown">
           <li>
-            <%= link_to signout_path, data: { turbo_method: :delete }, class: "dropdown-item d-flex align-items-center" do %>
+            <%= link_to signout_path, method: :delete, class: "dropdown-item d-flex align-items-center", data: { bs_method: "delete" } do %>
               <i class="bi bi-box-arrow-right"></i>
               <span><%= t("user.headers.account_link.logout")%></span>
             <% end %>
@@ -37,10 +24,10 @@
         </ul>
       </li>
       <li class="nav-item dropdown pe-3">
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           <%= t("language.language") %>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" aria-labelledby="languageDropdown">
           <li>
             <%= link_to t("language.english"), url_for(locale: "en"), class: "dropdown-item" %>
           </li>
