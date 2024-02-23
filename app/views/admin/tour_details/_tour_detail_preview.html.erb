@@ -1,10 +1,8 @@
 <div class="blog-item">
   <div class="bg-white p-4">
     <div class="mb-2">
-      <% if admin? %>
-        <%= link_to tour_detail.tour_detail_name, edit_admin_tour_detail_path(tour_detail), class: "btn btn-primary" %>
-        <%= link_to t("tour_details.deleted_tour"), admin_tour_detail_path(tour_detail), class: "btn btn-danger", data: { turbo_method: "delete", turbo_confirm: t("tour_details.confirm_delete")} %>
-      <%end%>
+      <%= link_to tour_detail.tour_detail_name, edit_admin_tour_detail_path(tour_detail), class: "btn btn-primary" %>
+      <%= link_to t("tour_details.deleted_tour"), admin_tour_detail_path(tour_detail), class: "btn btn-danger", data: { turbo_method: "delete", turbo_confirm: t("tour_details.confirm_delete")} %>
     </div>
     <div class="row">
       <div class="col-6">

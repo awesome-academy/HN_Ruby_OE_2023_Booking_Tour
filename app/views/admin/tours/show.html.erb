@@ -1,34 +1,30 @@
-<!-- Blog Start -->
 <div class="container-fluid py-5">
   <div class="row">
-    <!-- Blog Detail Start -->
     <div class="col-1"></div>
     <div class="col-8">
-      <% if admin? %>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <%= link_to t("tours.navbar.edit"), edit_admin_tour_path(@tour), class: "nav-link"  %>
-              </li>
-              <li class="nav-item">
-                <%= link_to t("tour_details.deleted_tour"), admin_tour_path(@tour), class: "nav-link text-danger", data: { turbo_method: "delete", turbo_confirm: t("tour_details.confirm_delete")} %>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= t("tours.navbar.tour_details") %>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to t("tours.navbar.add_details"), admin_add_tour_detail_path(@tour), class: "dropdown-item" %>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      <% end %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to t("tours.navbar.edit"), edit_admin_tour_path(@tour), class: "nav-link"  %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t("tour_details.deleted_tour"), admin_tour_path(@tour), class: "nav-link text-danger", data: { turbo_method: "delete", turbo_confirm: t("tour_details.confirm_delete")} %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= t("tours.navbar.tour_details") %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to t("tours.navbar.add_details"), admin_add_tour_detail_path(@tour), class: "dropdown-item" %>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class="pb-3">
         <div class="blog-item">
           <div class="position-relative">
@@ -57,7 +53,6 @@
         </div>
       </div>
     </div>
-    <!-- Blog Detail End -->
     <div class="col-3">
       <div class="mb-5">
         <% if @tour.tour_details.any? %>
@@ -66,10 +61,6 @@
           <% end %>
         <% end %>
       </div>
-      <%= turbo_frame_tag "booking" do %>
-      <% end %>
     </div>
   </div>
-  <!-- Blog Detail End -->
 </div>
-<!-- Blog End -->

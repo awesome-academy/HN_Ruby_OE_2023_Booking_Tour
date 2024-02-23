@@ -27,7 +27,8 @@ Rails.application.routes.draw do
     delete 'unfollow/:id' => 'relationships#destroy', as: 'unfollow_tour'
 
     namespace :admin do
-      resources :tours, :tour_details, :bills, :homes, :tour_categories
+      resources :tours, :tour_details, :homes, :tour_categories
+      resources :bills, only: %i(index cancel confirm)
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'
       put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'

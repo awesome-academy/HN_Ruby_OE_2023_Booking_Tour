@@ -1,12 +1,11 @@
-<header id="header" class="header d-flex align-items-center">
+<header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
     <%= link_to admin_dashboard_path, class: "logo d-flex align-items-center" do %>
       <%= image_tag("/assets/img/logo.png", alt: "") %>
       <span class="d-none d-lg-block"><%= t("dashboard.logo") %></span>
     <% end %>
-    <i class="bi bi-list toggle-sidebar-btn"></i>
   </div>
-  <nav class="header-nav d-flex flex-row-reverse">
+  <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
@@ -34,6 +33,19 @@
               <i class="bi bi-box-arrow-right"></i>
               <span><%= t("user.headers.account_link.logout")%></span>
             <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown pe-3">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
+          <%= t("language.language") %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li>
+            <%= link_to t("language.english"), url_for(locale: "en"), class: "dropdown-item" %>
+          </li>
+          <li>
+            <%= link_to t("language.vietnamese"), url_for(locale: "vi"), class: "dropdown-item" %>
           </li>
         </ul>
       </li>

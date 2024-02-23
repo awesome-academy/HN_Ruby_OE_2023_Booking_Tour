@@ -1,7 +1,9 @@
 class Admin::BillsController < Admin::BaseController
   before_action :find_bill, only: %i(confirm cancel)
   def index
-    @pagy, @bills = pagy(Booking.new_bills)
+    @filter = ransack_params
+    @filter.sorts ||= "created_at asc"
+    @pagy, @bills = pagy(@filter.result(distinct: true))
   end
 
   def cancel
@@ -10,7 +12,7 @@ class Admin::BillsController < Admin::BaseController
     else
       flash.now[:error] = t("bookings.cancel_error")
     end
-    update_bill_frame
+    redirect_to admin_bills_path
   end
 
   def confirm
@@ -19,23 +21,19 @@ class Admin::BillsController < Admin::BaseController
     else
       flash.now[:error] = t("bookings.confirm_error")
     end
-    update_bill_frame
+    redirect_to admin_bills_path
   end
   private
+
+  def ransack_params
+    Booking.ransack(params[:query])
+  end
+
   def find_bill
     @bill = Booking.find_by id: params[:id]
     return if @bill
 
     flash[:warning] = t("controllers.errors.bill_not_found")
     redirect_to admin_bills_path
-  end
-
-  def update_bill_frame
-    render turbo_stream: [
-      turbo_stream.replace(@bill, partial: "admin/bills/bill",
-                          locals: {bill: @bill}),
-      turbo_stream.append(:flash, partial: "shared/flash_messages",
-                          locals: {flash:})
-    ]
   end
 end
