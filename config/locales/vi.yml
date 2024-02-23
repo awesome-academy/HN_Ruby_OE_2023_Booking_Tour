@@ -1,4 +1,5 @@
 vi:
+  base_title: "Tour Du Lịch"
   time:
     formats:
       long: "%e %B, %Y %l:%M %p"
@@ -48,7 +49,8 @@ vi:
     showpage:
       bookings: "Lịch sử đặt Tour"
       tours_follow: "Các tour đã theo dõi"
-      review_tour: "Các bài đánh giá đã viết"
+      reviews_tour: "Các bài đánh giá đã viết"
+      review_tour: "Đánh giá tour"
       form:
         update_info: "Cập nhật thông tin"
   footer:
@@ -186,3 +188,27 @@ vi:
       delete: "Xóa Danh mục"
       details: "Chi tiết"
       update: "Cập nhật"
+  reviews:
+    submit_button: "Gửi"
+    content: "Nội dung"
+    errors:
+      unique: "User chỉ có thể  review tour 1 lần"
+      review_created: "Đánh giá đã được tạo thành công"
+      review_unsuccessful: "Đánh giá tạo không thành công"
+      review_existed: "Đánh giá đã tồn tại"
+      delete_successful: "Xóa Đánh giá thành công"
+      delete_unsuccessful: "Xóa Đánh giá không thành công"
+      delete_successful: "Cập nhật Đánh giá thành công"
+      delete_unsuccessful: "Cập nhật Đánh giá không thành công"
+      tour_not_found: "Không tìm thấy Tour"
+      reviews_not_found: "Không tìm thấy Review"
+      not_your_review: "Review nay không phải của bạn"
+    comfirm_delete: "Delete Review nay không ?"
+    delete: "Xóa"
+    update: "Thay đổi"
+    title:
+      update: "Cập nhật review"
+      new: "thêm review"
+  language:
+    english: "Tiếng anh"
+    vietnamese: "Tiếng việt"

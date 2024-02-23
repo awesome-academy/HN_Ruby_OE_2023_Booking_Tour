@@ -4,7 +4,7 @@ class TourDetail < ApplicationRecord
                         :tour_id].freeze
   belongs_to :tour
   has_many :bookings, dependent: :destroy
-
+  has_many :reviews, through: :bookings, source: :reviews
   validates :detail_description, presence: true
   validates :tour_detail_name, presence: true
   validates :max_people, presence: true, numericality: {greater_than: 0}

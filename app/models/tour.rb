@@ -10,12 +10,13 @@ class Tour < ApplicationRecord
                        Settings.width_avatar_icon]
   end
   has_many :tour_details, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :bookings, through: :tour_details, source: :bookings
   has_many :tour_followings,
            class_name: TourFollowing.name, dependent: :destroy
   has_many :followed_users, through: :tour_followings,
             source: :user
-  has_many :bookings, dependent: :destroy, through: :tour_details
+  has_many :reviews, through: :tour_details,
+           source: :reviews, class_name: Review.name
   validates :tour_name, presence: true
   validates :image, presence: true, allow_nil: true
   validates :time_duration, presence: true

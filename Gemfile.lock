@@ -181,7 +181,7 @@ GEM
       libv8-node (~> 18.16.0.0)
     minitest (5.19.0)
     msgpack (1.7.2)
-    mysql2 (0.5.2)
+    mysql2 (0.5.6)
     net-imap (0.3.7)
       date
       net-protocol
@@ -333,7 +333,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   mini_racer
-  mysql2 (= 0.5.2)
+  mysql2 (= 0.5.6)
   pagy
   puma (~> 5.0)
   rails (~> 7.0.5)
