@@ -110,6 +110,8 @@ vi:
       detail_description: "Mô tả chi tiết"
       max_people: "Số người tối đa"
       start_location: "Điểm xuất phát"
+      time_duration: "Số ngày đi"
+      time_duration_view: "%{days} Ngày"
       price: "Giá"
       submit: "Gửi đi"
       flash:
@@ -122,7 +124,7 @@ vi:
   bookings:
     form:
       booking_date: "Ngày đặt"
-      phone: "Điện thoại"
+      phone: "Điện thoại (+84)"
       date_start: "Ngày bắt đầu"
       end_date: "Ngày kết thúc"
       numbers_people: "Số người"
@@ -132,6 +134,8 @@ vi:
     show:
       heading: "Chi Tiết Đặt Phòng"
       booking_date: "Ngày Đặt Phòng:"
+      start_date: "Ngày bắt đầu:"
+      end_date: "Ngày kết thúc:"
       phone: "Điện Thoại:"
       numbers_people: "Số Người:"
       total_amount: "Tổng Tiền:"
@@ -152,6 +156,8 @@ vi:
     must_be_user: "Chỉ có người dùng mới đặt được tour"
     errors:
       date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
+      out_of_people: "Số người đặt tour không vượt quá %{max_people}"
+      update_status_fail: "Cập nhật trạng thái không thành công"
   dashboard:
     logo: "ThatDepTrai"
     link:

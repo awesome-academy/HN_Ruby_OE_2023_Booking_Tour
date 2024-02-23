@@ -1,5 +1,5 @@
 class Tour < ApplicationRecord
-  CREATE_PARAMS = [:tour_name, :time_duration, :hagtag,
+  CREATE_PARAMS = [:tour_name, :hagtag,
                    :tour_description, :tour_category_id,
                    :image, :content].freeze
   has_rich_text :content
@@ -9,7 +9,7 @@ class Tour < ApplicationRecord
                        resize_to_limit: [Settings.high_avatar_icon,
                        Settings.width_avatar_icon]
   end
-  has_many :tour_details, dependent: :destroy
+  has_many :tour_details, dependent: :nullify
   has_many :bookings, through: :tour_details, source: :bookings
   has_many :tour_followings,
            class_name: TourFollowing.name, dependent: :destroy
@@ -19,6 +19,5 @@ class Tour < ApplicationRecord
            source: :reviews, class_name: Review.name
   validates :tour_name, presence: true
   validates :image, presence: true, allow_nil: true
-  validates :time_duration, presence: true
   scope :new_tour, ->{order(created_at: :desc)}
 end

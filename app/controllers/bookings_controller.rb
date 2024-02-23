@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
   before_action :load_tour_detail, only: %i(new)
   before_action :find_booking, only: %i(show cancel)
   before_action :check_owner, only: %i(cancel)
-  after_action :update_bill_frame, only: %i(cancel)
   def new
     @booking = build_booking
   end
@@ -20,13 +19,13 @@ class BookingsController < ApplicationController
   end
 
   def cancel
-    if @booking.pending?
-      flash[:error] = t("bookings.cancel_error")
-    elsif @booking.cancel_booking
+    begin
+      @booking.cancel_booking
       flash[:success] = t("bookings.cancel_success")
-    else
-      flash[:error] = t("bookings.cancel_error")
+    rescue RuntimeError => e
+      flash[:danger] = e
     end
+    redirect_to history_url
   end
 
   def show; end
@@ -41,7 +40,6 @@ class BookingsController < ApplicationController
 
   private
   def check_owner
-    set_booking
     return if current_user == @booking.user
 
     flash[:warning] = t("controllers.errors.requied_login")
@@ -79,14 +77,5 @@ class BookingsController < ApplicationController
       user: current_user,
       numbers_people: Settings.peoples_booking_tours
     )
-  end
-
-  def update_bill_frame
-    render turbo_stream: [
-      turbo_stream.replace(@booking, partial: "bookings/booking",
-                          locals: {booking: @booking}),
-      turbo_stream.append(:flash, partial: "shared/flash_messages",
-                          locals: {flash:})
-    ]
   end
 end
