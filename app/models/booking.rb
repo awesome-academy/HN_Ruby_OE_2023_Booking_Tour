@@ -72,7 +72,7 @@ class Booking < ApplicationRecord
 
   def confirm_booking
     reload
-    return I18n.t("bookings.errors.update_status_fail") unless pending?
+    raise I18n.t("bookings.errors.update_status_fail") unless pending?
 
     confirmed!
     ConfirmBookingMailJob.perform_async(id)
@@ -80,7 +80,7 @@ class Booking < ApplicationRecord
 
   def successed_booking
     reload
-    return I18n.t("bookings.errors.update_status_fail") unless confirmed?
+    raise I18n.t("bookings.errors.update_status_fail") unless confirmed?
 
     successed!
     SuccessBookingMailJob.perform_async(id)
