@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users , controllers: {sessions: "devise/sessions",
                                     registrations: "devise/registrations",
-                                    confirmations: "devise/confirmations"}
+                                    confirmations: "devise/confirmations",
+                                    omniauth_callbacks: 'users/omniauth_callbacks'}
   scope "(:locale)", locale: /en|vi/ do
     resources :tours, only: %i(home index show)
     resources :users, only: %i(index show)

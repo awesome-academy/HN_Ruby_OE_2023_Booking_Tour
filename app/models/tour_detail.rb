@@ -16,6 +16,6 @@ class TourDetail < ApplicationRecord
             numericality: {greater_than_or_equal_to:
             Settings.price_min}
   validates :time_duration, presence: true,
-            numericality: {only_integer: true,
-                           greater_than_or_equal_to: Settings.time_during_min}
+            numericality: {greater_than_or_equal_to:
+            Settings.time_during_min}
 end
