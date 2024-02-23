@@ -1,16 +1,19 @@
 class Booking < ApplicationRecord
   BOOKING_PARAMS = [:phone, :numbers_people, :tour_detail_id,
                     :date_start, :user_id].freeze
+  CANCEL_PARAMS = [:reason].freeze
   belongs_to :tour_detail
   belongs_to :user
   has_one :review, dependent: :destroy, class_name: Review.name
-  validates :phone, presence: true, phone: true
-  validates :date_start, presence: true
+  validates :phone, presence: true, phone: true, on: :create
+  validates :date_start, presence: true, allow_nil: true, on: :create
+  validates :reason, presence: true, on: :update,
+            if: ->{status.to_sym == :canceled}
   validates :numbers_people, presence: true,
             numericality: {only_integer: true,
                            greater_than_or_equal_to:
                            Settings.peoples_booking_min}
-  validate :booking_date_in_future
+  validate :booking_date_in_future, on: :create
   validate :out_of_peoples, if: ->{numbers_people.present?}
   scope :new_bills, ->{order(created_at: :desc)}
 
@@ -23,18 +26,24 @@ class Booking < ApplicationRecord
     successed: 3
   }
 
-  def cancel_booking
+  def cancel_booking params
     reload
-    raise I18n.t("bookings.errors.update_status_fail") unless pending?
+    unless pending?
+      errors.add(:status, I18n.t("bookings.errors.update_status_fail"))
+      raise I18n.t("bookings.errors.update_status_fail")
+    end
+    raise I18n.t("bookings.errors.update_status_fail") unless update params
 
-    update(status: 2)
+    canceled!
+    CancelBookingMailJob.perform_async(id)
   end
 
   def confirm_booking
     reload
     return I18n.t("bookings.errors.update_status_fail") unless pending?
 
-    update(status: 1)
+    confirmed!
+    ConfirmBookingMailJob.perform_async(id)
   end
 
   private

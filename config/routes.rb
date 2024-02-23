@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users , controllers: {sessions: "devise/sessions",
                                     registrations: "devise/registrations",
@@ -30,10 +31,12 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :tours, :tour_details, :homes, :tour_categories
       resources :bills, only: %i(index cancel confirm)
+      mount Sidekiq::Web => '/sidekiq'
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'
-      put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'
+      get 'cancel_booking/:id' => 'bills#cancel_modal', as: 'cancel_booking'
       put 'confirm_booking/:id' => 'bills#confirm', as: 'confirm_booking'
+      post 'submit_cancel/:id' => 'bills#submit_cancel', as: "submit_cancel"
     end
   end
 end

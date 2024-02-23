@@ -1,0 +1,6 @@
+<%= turbo_stream.replace :form_cancel do %>
+  <%= render "admin/bills/form_cancel" %>
+<%end%>
+<%= turbo_stream.append :flash do%>
+  <%= render "shared/flash_messages"%>
+<%end%>

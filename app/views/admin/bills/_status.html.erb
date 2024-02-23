@@ -1,0 +1,14 @@
+<%= turbo_frame_tag bill do %>
+  <%= bill.status %>
+  <% if bill.pending? %>
+    <%= link_to admin_cancel_booking_path(bill),data: {controller: "cancel-booking", action: "click->cancel-booking#showModal" }, class: "btn btn-danger btn-sm ml-2" do %>
+      <%= t("bookings.canceltour") %>
+    <%end%>
+  <% end %>
+  <% if bill.pending? %>
+    <%= link_to t("bookings.confirmtour"), admin_confirm_booking_path(bill),data: {turbo_method: :put, turbo_confirm: t("bookings.confirmtour") }, class: "btn btn-primary btn-sm ml-2"%>
+  <% end %>
+  <% if bill.canceled? %>
+    <%= "- "+ bill.reason %>
+  <% end %>
+<% end %>

@@ -33,8 +33,7 @@
       <th><%= t("bookings.show.phone") %></th>
       <th><%= sort_link(@filter, :numbers_people, t("bookings.show.numbers_people")) %></th>
       <th><%= sort_link(@filter, :total_amount, t("bookings.show.total_amount")) %></th>
-      <th><%= sort_link(@filter, :status, t("bookings.show.status")) %></th>
-      <th colspan="2"><%= t("bookings.show.action") %></th>
+      <th colspan="3"><%= sort_link(@filter, :status, t("bookings.show.status")) %></th>
     </tr>
   </thead>
   <% if @bills.any? %>

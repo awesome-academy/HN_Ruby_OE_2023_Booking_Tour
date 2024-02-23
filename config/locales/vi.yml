@@ -129,6 +129,7 @@ vi:
       detail_description: "Mô Tả Chi Tiết:"
       tour_detail_name: "Tên Chi Tiết Tour:"
       max_people: "Số Người Tối Đa:"
+      reason: "Lý do hủy tour:"
       back_to_bookings: "Quay Lại Đặt Phòng"
       date_start_to: "Ngày bắt đầu từ"
       date_start_form: "Ngày bắt đầu đến"
@@ -145,6 +146,21 @@ vi:
       date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
       out_of_people: "Số người đặt tour không vượt quá %{max_people}"
       update_status_fail: "Cập nhật trạng thái không thành công"
+    mail:
+      cancel_title: "Thông Báo Hủy Tour"
+      confirm_title: "Xác Nhận Tour"
+      tour_cancellation_notification: "Thông Báo Hủy Tour"
+      dear_recipient: "Kính gửi %{recipient_name},"
+      tour_cancelation_message: "Chúng tôi thành thật xin lỗi thông báo rằng tour sắp tới mà bạn đã đăng ký tham gia đã bị hủy bỏ. Chúng tôi hiểu rằng điều này có thể tạo ra bất tiện cho bạn và chân thành xin lỗi vì bất kỳ sự gây trở ngại nào cho kế hoạch của bạn "
+      sincerely: "Trân trọng, %{company_name}"
+      visit_our_website: "Truy cập trang web của chúng tôi"
+      tour_confirmation: "Xác Nhận Tour"
+      dear_customer: "Kính gửi quý khách hàng %{customer_name},"
+      tour_confirmation_message: "Cảm ơn bạn đã đặt tour %{tour_name} vào ngày %{tour_date}. Chúng tôi rất háo hức được phục vụ bạn!"
+      additional_details: "Thông Tin Bổ Sung"
+      tour_name: "Tên Tour"
+      tour_date: "Ngày Tour"
+      contact_customer_support: "Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ thêm, vui lòng liên hệ với bộ phận hỗ trợ khách hàng của chúng tôi."
   dashboard:
     logo: "ThatDepTrai"
     link:
@@ -222,6 +238,7 @@ vi:
     search: "Tìm kiếm"
     clear_search: "Làm mới bộ lọc"
     create: "Tạo"
+    close: "Đóng"
   title:
     reviews:
       update: "Cập nhật review"
