@@ -199,6 +199,7 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
+    phonelib (0.8.7)
     popper_js (1.16.1)
     public_suffix (5.0.3)
     puma (5.6.6)
@@ -335,6 +336,7 @@ DEPENDENCIES
   mini_racer
   mysql2 (= 0.5.6)
   pagy
+  phonelib
   puma (~> 5.0)
   rails (~> 7.0.5)
   rails-i18n

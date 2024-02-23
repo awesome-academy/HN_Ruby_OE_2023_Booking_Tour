@@ -9,7 +9,7 @@ class Tour < ApplicationRecord
                        resize_to_limit: [Settings.high_avatar_icon,
                        Settings.width_avatar_icon]
   end
-  has_many :tour_details, dependent: :destroy
+  has_many :tour_details, dependent: :nullify
   has_many :bookings, through: :tour_details, source: :bookings
   has_many :tour_followings,
            class_name: TourFollowing.name, dependent: :destroy
