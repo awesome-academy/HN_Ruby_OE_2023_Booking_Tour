@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_22_30_708000) do
+ActiveRecord::Schema[7.0].define(version: 2024_22_30_708001) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_22_30_708000) do
     t.datetime "updated_at", null: false
     t.bigint "booking_id", null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["booking_id"], name: "unique_booking_on_reviews", unique: true
   end
 
   create_table "tour_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

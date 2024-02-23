@@ -1,0 +1,11 @@
+<%= form_with model: review do |f| %>
+  <div class="form-group">
+    <%= f.label :review_text, t("reviews.content") %>
+    <%= f.text_area :review_text, class: 'form-control' %>
+    <%= render 'shared/error_element_message', errors: review.errors[:review_text] %>
+  </div>
+  <%= f.hidden_field :booking_id %>
+  <div class="actions">
+    <%= f.submit t("reviews.submit_button"), class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -16,7 +16,8 @@ class Booking < ApplicationRecord
   enum status: {
     pending: 0,
     confirmed: 1,
-    canceled: 2
+    canceled: 2,
+    successed: 3
   }
   private
 
