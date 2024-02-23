@@ -1,26 +1,26 @@
 <div class="container">
   <div class="card p-5">
     <div class="card-header">
-      <h2><%= t("user.loginpage.signin")%></h2>
+      <h2><%= t("user.headers.account_link.login")%></h2>
     </div>
     <div class="card_body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
-          <%= f.label :email, t("user.loginpage.email_label") %><br />
+          <%= f.label :email, t("user.signuppate.email_label") %><br />
           <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
         </div>
         <div class="form-group">
-          <%= f.label :password, t("user.loginpage.password") %><br />
+          <%= f.label :password, t("user.signuppate.password") %><br />
           <%= f.password_field :password, class: "form-control", autocomplete: "current-password" %>
         </div>
         <% if devise_mapping.rememberable? %>
           <div class="form-group">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me, t("user.loginpage.save_password") %>
+            <%= f.label :remember_me, t("user.signuppate.save_password") %>
           </div>
         <% end %>
         <div class="actions">
-          <%= f.submit t("user.loginpage.signin"), class: "btn btn-success" %>
+          <%= f.submit t("user.headers.account_link.login"), class: "btn btn-success" %>
         </div>
       <% end %>
       <%= render "devise/shared/links" %>

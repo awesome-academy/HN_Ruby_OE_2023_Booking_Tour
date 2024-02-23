@@ -9,14 +9,6 @@ vi:
         home: "Trang chủ"
         tour: "Tour"
         your_tour: "Tour của bạn"
-      admin_link:
-        admin: "Quản trị"
-        user: "Người dùng"
-        tour: "Tour"
-        bill: "Hóa đơn"
-        tour_comfirm: "Xác nhận tour"
-        new_tour: "Thêm tour mới"
-        admin_home: "Dashboard"
       account_link:
         account: "Tài khoản"
         information: "Thông tin tài khoản"
@@ -25,20 +17,10 @@ vi:
         logout: "Đăng xuất"
         login: "Đăng nhập"
         register: "Đăng Ký"
-    loginpage:
-      signin: "Đăng Nhập"
-      signup: "Đăng ký"
-      email_label: "Địa Chỉ Email"
-      email: "Email"
-      password: "Mật khẩu"
-      password_label: "Mật Khẩu"
-      save_password: "Nhớ mật khẩu"
-      forgot: "Quên mật khẩu"
-      not_found_user: "Tài khoản không tồn tại"
     signuppate:
+      email: "Email"
       email_label: "Địa Chỉ Email"
       user_label: "Tên"
-      email: "Email"
       phone: "SDT"
       password: "Mật khẩu"
       password_label: "Mật Khẩu"
@@ -46,13 +28,17 @@ vi:
       save_password: "Nhớ mật khẩu"
       forgot: "Quên mật khẩu"
       not_found_user: "Tài khoản không tồn tại"
+    editpage:
+      edit: "Sửa %{resource_name}"
+      cancel_account: "Hủy tài khoản của tôi"
+      cancel_account_button: "Hủy tài khoản của tôi"
+      back_button: "Quay lại"
+      confirmation_message: "Bạn có chắc chắn không?"
     showpage:
       bookings: "Lịch sử đặt Tour"
       tours_follow: "Các tour đã theo dõi"
       reviews_tour: "Các bài đánh giá đã viết"
       review_tour: "Đánh giá tour"
-      form:
-        update_info: "Cập nhật thông tin"
   footer:
     brand_name: "DU LỊCH GIA ĐÌNH"
     tagline: "Khám phá thế giới cùng TRAVELER - nơi mỗi chuyến đi là một câu chuyện đang chờ được kể."
@@ -65,7 +51,6 @@ vi:
     email: "info@example.com"
     newsletter: "Bản tin"
     placeholder_email: "Email của bạn"
-    sign_up: "Đăng ký"
   tourform:
     tour_name: "Tên Tour"
     time_duration: "Thời lượng"
@@ -116,13 +101,10 @@ vi:
       start_location: "Điểm xuất phát"
       time_duration: "Số ngày đi"
       time_duration_view: "%{days} Ngày"
-      price: "Giá"
-      submit: "Gửi đi"
-      flash:
+    flash:
       success_create: "Chi tiết tour được tạo thành công."
       success_update: "Chi tiết tour được cập nhật thành công."
     confirm_delete: "Xác nhận xóa tour này"
-    deleted_tour: "Xóa tour"
     tour_detail_deleted: "Xóa thành công !!!! "
     tour_detail_fail: "Xóa không thành công "
   bookings:
@@ -134,7 +116,6 @@ vi:
       numbers_people: "Số người"
       total_amount: "Tổng giá"
       price: "Giá"
-      booking: "Đặt tour"
     show:
       heading: "Chi Tiết Đặt Phòng"
       booking_date: "Ngày Đặt Phòng:"
@@ -151,8 +132,6 @@ vi:
       back_to_bookings: "Quay Lại Đặt Phòng"
       date_start_to: "Ngày bắt đầu từ"
       date_start_form: "Ngày bắt đầu đến"
-      search: "Tìm kiếm"
-      clear_search: "Làm mới bộ lọc"
     create_success: "Đặt tour thành công!"
     view_detail: "Xem chi tiết"
     canceltour: "Hủy Tour"
@@ -190,7 +169,6 @@ vi:
     number_of_tours: "Số  lượng tour"
     form:
       category_name: "Tên danh mục :"
-      submit_button: "Lưu"
     flash_messages:
       edit_success: "Danh mục Tour đã được cập nhật thành công."
       edit_failure: "Không thể cập nhật danh mục Tour."
@@ -199,11 +177,7 @@ vi:
       destroy_success: "Danh mục Tour đã được xóa thành công."
       destroy_failure: "Không thể xóa danh mục Tour."
       not_found: "Không tìm thấy danh mục Tour."
-      delete: "Xóa Danh mục"
-      details: "Chi tiết"
-      update: "Cập nhật"
   reviews:
-    submit_button: "Gửi"
     content: "Nội dung"
     errors:
       unique: "User chỉ có thể  review tour 1 lần"
@@ -217,27 +191,17 @@ vi:
       tour_not_found: "Không tìm thấy Tour"
       reviews_not_found: "Không tìm thấy Review"
       not_your_review: "Review nay không phải của bạn"
-      review_existed: "Review đã tồn tại !!!!"
     comfirm_delete: "Delete Review nay không ?"
-    delete: "Xóa"
-    update: "Thay đổi"
-    title:
-      update: "Cập nhật review"
-      new: "thêm review"
   language:
     language: "Ngôn ngữ"
     english: "Tiếng anh"
     vietnamese: "Tiếng việt"
-  log_in: "Đăng nhập"
-  sign_up: "Đăng ký"
-  forgot_password: "Quên mật khẩu?"
   resend_confirmation: "Không nhận được hướng dẫn xác nhận?"
   resend_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
   sign_in_with: "Đăng nhập bằng %{provider}"
-  resend_confirmation_page:
+  resend_confirmation_button:
     title: "Gửi lại Hướng dẫn Xác nhận"
     label_email: "Email"
-    button_text: "Gửi lại Hướng dẫn Xác nhận"
   welcome_email:
     welcome: 'Chào mừng %{email}!'
     confirm_email: 'Bạn có thể xác nhận email tài khoản của mình qua liên kết dưới đây:'
@@ -248,3 +212,17 @@ vi:
   buttons:
     submit: "Gửi"
     clear: "Xóa"
+    resend_confirmation_button: "Gửi lại Hướng dẫn Xác nhận"
+    delete: "Xóa"
+    update: "Thay đổi"
+    update_info: "Cập nhật thông tin"
+    tour_details: "Chi Tiết Tour"
+    add_details: "Thêm chi tiết tour mới"
+    deleted_tour: "Xóa tour"
+    search: "Tìm kiếm"
+    clear_search: "Làm mới bộ lọc"
+    create: "Tạo"
+  title:
+    reviews:
+      update: "Cập nhật review"
+      new: "thêm review"

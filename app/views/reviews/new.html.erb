@@ -1,4 +1,4 @@
-<% provide :title, t("reviews.title.new") %>
+<% provide :title, t("title.reviews.new") %>
 <%= form_with model: @review, url: booking_reviews_path  do |f| %>
   <div class="form-group">
     <%= f.label :review_text, t("reviews.content") %>
@@ -7,6 +7,6 @@
   </div>
   <%= f.hidden_field :booking_id %>
   <div class="actions">
-    <%= f.submit t("reviews.submit_button"), class: 'btn btn-primary' %>
+    <%= f.submit t("buttons.submit"), class: 'btn btn-primary' %>
   </div>
 <% end %>
