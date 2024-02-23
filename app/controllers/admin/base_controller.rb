@@ -5,7 +5,6 @@ class Admin::BaseController < ApplicationController
   private
   def check_admin
     return if current_user.admin?
-
     flash[:warning] = t("controllers.errors.only_admin_role")
     redirect_to login_url
   end

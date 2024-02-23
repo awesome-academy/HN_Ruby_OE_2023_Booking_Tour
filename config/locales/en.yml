@@ -221,3 +221,7 @@ en:
   resend_confirmation: "Didn't receive confirmation instructions?"
   resend_unlock_instructions: "Didn't receive unlock instructions?"
   sign_in_with: "Sign in with %{provider}"
+  resend_confirmation_page:
+    title: "Resend Confirmation Instructions"
+    label_email: "Email"
+    button_text: "Resend Confirmation Instructions"

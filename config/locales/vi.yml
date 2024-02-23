@@ -224,3 +224,7 @@ vi:
   resend_confirmation: "Không nhận được hướng dẫn xác nhận?"
   resend_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
   sign_in_with: "Đăng nhập bằng %{provider}"
+  resend_confirmation_page:
+    title: "Gửi lại Hướng dẫn Xác nhận"
+    label_email: "Email"
+    button_text: "Gửi lại Hướng dẫn Xác nhận"
