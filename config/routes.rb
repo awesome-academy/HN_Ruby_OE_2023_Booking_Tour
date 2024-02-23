@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
+  devise_for :users , controllers: {sessions: "devise/sessions",
+                                    registrations: "devise/registrations"}
   scope "(:locale)", locale: /en|vi/ do
-    resources :tours, :tour_details, :users, :sessions, :bookings, :relationships
+    resources :tours, :tour_details, :bookings, :relationships
+    resources :users, only: %i(index following_tour show)
     resources :bookings do
       resources :reviews, only: %i(new create)
     end
+    as :user do
+      get "signin" => "devise/sessions#new", as: "login"
+      post "signin" => "devise/sessions#create"
+      delete "signout" => "devise/sessions#destroy"
+      get "signup" => "devise/registrations#new"
+    end
     resources :reviews , only: %i(destroy edit update)
     root 'tours#home'
-    get 'login' => 'sessions#new'
     get 'home' => 'tours#home'
-    post 'login' => 'sessions#create'
-    delete 'logout' =>'sessions#destroy'
     get 'cancel_booking/:id' => 'bookings#cancel', as: 'cancel_booking'
-    get 'signup' => 'users#new'
     get 'book/:id' => 'bookings#new', as: 'book'
     get 'booking_history' => 'bookings#booking_history', as:'history'
     get 'tour_following' => 'users#following_tour', as: 'tour_following'
