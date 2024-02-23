@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  include SessionsHelper
   include ToursHelper
   include ReviewsHelper
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -17,13 +17,13 @@ class ApplicationController < ActionController::Base
   end
 
   def check_login
-    return true if logged_in?
+    return true if user_signed_in?
 
     flash[:warning] = t("controllers.errors.requied_login")
   end
 
   def check_user_role
-    return true unless admin?
+    return true unless current_user.admin?
 
     flash[:warning] = t("controllers.errors.only_user_role")
   end
@@ -32,5 +32,13 @@ class ApplicationController < ActionController::Base
     return default_message if object.errors.empty?
 
     " #{object.errors.full_messages.join(', ')}"
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    added_attrs = User::SIGNUP_PARAMS
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 end

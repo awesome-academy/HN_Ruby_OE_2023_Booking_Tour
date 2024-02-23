@@ -1,8 +1,11 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :rememberable, :validatable
+
   SIGNUP_PARAMS = [:username, :phone, :email,
                   :password, :avatar,
                   :password_confirmation].freeze
-  attr_accessor :remember_token
+  # attr_accessor :remember_token
 
   has_many :bookings, dependent: :nullify
   has_one_attached :avatar do |attachable|
@@ -19,25 +22,6 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true
   validates :password_confirmation, presence: true, allow_nil: true
   scope :new_user, ->{order(created_at: :desc)}
-  has_secure_password
-  class << self
-    def User.digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               BCrypt::Engine::MIN_COST
-             else
-               BCrypt::Engine.cost
-             end
-      BCrypt::Password.create(string, cost:)
-    end
-
-    def new_token
-      SecureRandom.urlsafe_base64
-    end
-  end
-  def remember
-    self.remember_token = User.new_token
-    update_column :remember_digest, User.digest(remember_token)
-  end
 
   def following_tour tour
     followed_tours << tour unless followed_tours.include?(tour)
@@ -47,10 +31,6 @@ class User < ApplicationRecord
     return unless followed_tours.include?(tour)
 
     followed_tours.delete(tour)
-  end
-
-  def forget
-    update_column :remember_digest, nil
   end
 
   def authenticated? attribute, token
