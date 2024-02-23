@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   SIGNUP_PARAMS = [:username, :phone, :email,
                   :password, :avatar,
                   :password_confirmation].freeze

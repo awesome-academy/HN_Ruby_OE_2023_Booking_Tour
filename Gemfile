@@ -9,6 +9,7 @@ gem "config"
 gem "rails", "~> 7.0.5"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "bcrypt"
+gem "devise"
 gem "pagy"
 gem "phonelib"
 gem "sprockets-rails"

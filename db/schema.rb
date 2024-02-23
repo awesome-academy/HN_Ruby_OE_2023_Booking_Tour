@@ -89,6 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_22_30_709000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "tour_id"
+    t.decimal "time_end", precision: 10, default: "0"
     t.decimal "time_duration", precision: 10, default: "0"
     t.index ["tour_id"], name: "index_tour_details_on_tour_id"
   end

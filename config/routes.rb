@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   scope "(:locale)", locale: /en|vi/ do
     resources :tours, :tour_details, :users, :sessions, :bookings, :relationships
     resources :bookings do
