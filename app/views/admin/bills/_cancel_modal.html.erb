@@ -1,0 +1,13 @@
+<%= turbo_frame_tag :remote_modal do %>
+  <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-controller="bs-modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t("bookings.canceltour") %></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <%= render "admin/bills/form_cancel" %>
+      </div>
+    </div>
+  </div>
+<% end %>

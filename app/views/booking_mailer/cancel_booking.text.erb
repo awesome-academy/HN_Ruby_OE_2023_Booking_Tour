@@ -1,0 +1,5 @@
+<%= I18n.t("bookings.mail.tour_cancellation_notification") %>
+<%= I18n.t("bookings.mail.dear_recipient", recipient_name: @user.username) %>,
+<%= I18n.t("bookings.mail.tour_cancelation_message", reason: @booking.reason) %>
+<%= I18n.t("bookings.mail.contact_customer_support") %>
+<%= I18n.t("bookings.mail.thank_you") %>

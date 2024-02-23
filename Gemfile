@@ -84,3 +84,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "sidekiq", "~> 7.2"
+
+gem "redis", "~> 5.1"
+gem "whenever", "~> 1.0", require: false
