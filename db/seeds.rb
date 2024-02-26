@@ -67,8 +67,7 @@ puts 'Booking seed data has been created!'
 10.times do
   Review.create(
     review_text: Faker::Lorem.paragraph,
-    user: User.all.sample,
-    tour: Tour.all.sample
+    booking: Booking.all.sample,
   )
 end
 puts 'Fake review data has been created!'

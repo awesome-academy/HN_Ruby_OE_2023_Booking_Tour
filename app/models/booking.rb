@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
                     :date_start, :user_id].freeze
   belongs_to :tour_detail
   belongs_to :user
+  has_one :review, dependent: :destroy, class_name: Review.name
   validates :phone, presence: true
   validates :date_start, presence: true
   validates :numbers_people, presence: true,

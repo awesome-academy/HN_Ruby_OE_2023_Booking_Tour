@@ -15,7 +15,7 @@ gem "sprockets-rails"
 gem "font-awesome-sass", "~> 5.10.2"
 gem "jquery-rails"
 gem "mini_racer"
-gem "mysql2", "0.5.2"
+gem "mysql2", "0.5.6"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "image_processing"
 gem "puma", "~> 5.0"
