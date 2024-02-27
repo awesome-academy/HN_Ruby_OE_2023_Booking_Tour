@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    resources :tours, :tour_details, :users, :sessions, :bookings, :relationships, :reviews
+    resources :tours, :tour_details, :users, :sessions, :bookings, :relationships
+    resources :bookings do
+      resources :reviews, only: %i(new create)
+    end
+    resources :reviews , only: %i(destroy edit update)
     root 'tours#home'
     get 'login' => 'sessions#new'
     get 'home' => 'tours#home'
@@ -14,9 +18,8 @@ Rails.application.routes.draw do
     get 'follow/:id' => 'relationships#create', as: 'follow_tour'
     get 'review/:id' => 'reviews#new', as: 'review_tour'
     delete 'unfollow/:id' => 'relationships#destroy', as: 'unfollow_tour'
-  end
-  namespace :admin do
-    scope "(:locale)", locale: /en|vi/ do
+
+    namespace :admin do
       resources :tours, :tour_details, :bills, :homes, :tour_categories
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'

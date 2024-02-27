@@ -9,13 +9,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <%= render "shared/flash_messages"%>
     <%= render "admin/layouts/header"%>
-    <div class="row">
+    <div>
       <%= render "admin/layouts/side_navbar"%>
-      <div class="col-md-10 ml-sm-auto col-lg-11 px-md-4">
-        <%= render "shared/flash_messages"%>
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
   </body>
 </html>
