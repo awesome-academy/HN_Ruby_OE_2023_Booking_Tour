@@ -23,6 +23,7 @@ gem "mini_racer"
 gem "mysql2", "0.5.6"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "image_processing"
+gem "pundit"
 gem "puma", "~> 5.0"
 gem "rails-i18n"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
