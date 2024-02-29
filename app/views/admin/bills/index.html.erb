@@ -1,10 +1,51 @@
-<div class="container">
-  <% if @bills.any? %>
-    <% @bills.each do |bill| %>
-      <%= render "admin/bills/bill", bill: bill %>
-    <% end %>
-    <div class="d-flex justify-content-center">
-      <%== pagy_bootstrap_nav(@pagy) %>
+<div class="container-fluid mt-4">
+  <%= search_form_for @filter, url: filter_admin_bills_path, html: { class: "form bg-light p-3" } do |f| %>
+    <div class="row g-3">
+      <div class="col-sm-3">
+        <%= f.label :date_start_gt, t("bookings.show.date_start_to"), class: "form-label" %>
+        <%= f.date_field :date_start_gt, class: "form-control", placeholder: "Start Date (After)" %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.label :date_start_lt, t("bookings.show.date_start_form"), class: "form-label" %>
+        <%= f.date_field :date_start_lt, class: "form-control", placeholder: "Start Date (Before)" %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.label :status_eq, t("bookings.show.status"), class: "form-label" %>
+        <%= f.select(:status_eq, Booking.statuses.keys.map { |status| [t("bookings.filter.statuses.#{status}"), status] },
+          { prompt: t("bookings.filter.labels.select_status"), selected: params[:status] }, class: "form-control" ) %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.submit t("bookings.show.search"), class: "btn btn-primary mt-4 mb-2 w-100" %>
+      </div>
+      <div class="col-sm-2">
+        <%= link_to t("bookings.show.clear_search"), admin_bills_path , data: { turbo_method: :get }, class: "btn btn-warning mt-4 mb-2 w-100"%>
+      </div>
     </div>
   <% end %>
+</div>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th><%= t("bookings.show.tour_detail_name") %></th>
+      <th><%= sort_link(@filter, :booking_date, t("bookings.show.booking_date")) %></th>
+      <th><%= sort_link(@filter, :date_start, t("bookings.show.date_start")) %></th>
+      <th><%= sort_link(@filter, :end_date, t("bookings.show.end_date")) %></th>
+      <th><%= t("bookings.show.phone") %></th>
+      <th><%= sort_link(@filter, :numbers_people, t("bookings.show.numbers_people")) %></th>
+      <th><%= sort_link(@filter, :total_amount, t("bookings.show.total_amount")) %></th>
+      <th><%= sort_link(@filter, :status, t("bookings.show.status")) %></th>
+      <th colspan="2"><%= t("bookings.show.action") %></th>
+    </tr>
+  </thead>
+  <% if @bills.any? %>
+    <tbody>
+      <% @bills.each do |bill| %>
+        <%= render "admin/bills/bill", bill: bill %>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
+</div>
+<div class="d-flex justify-content-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
 </div>

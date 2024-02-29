@@ -149,6 +149,10 @@ vi:
       tour_detail_name: "Tên Chi Tiết Tour:"
       max_people: "Số Người Tối Đa:"
       back_to_bookings: "Quay Lại Đặt Phòng"
+      date_start_to: "Ngày bắt đầu từ"
+      date_start_form: "Ngày bắt đầu đến"
+      search: "Tìm kiếm"
+      clear_search: "Làm mới bộ lọc"
     create_success: "Đặt tour thành công!"
     view_detail: "Xem chi tiết"
     canceltour: "Hủy Tour"
@@ -165,14 +169,14 @@ vi:
   dashboard:
     logo: "ThatDepTrai"
     link:
-      tour: "tour"
+      tour: "Tour"
       tours: "Danh sách tours"
-      new_tours": "Thêm tour mới"
+      new_tours: "Thêm tour mới"
       bill: "Hóa Đơn"
       bills: "Danh sách đăt tour"
       category: "Danh sách danh mục"
       categorys: "Danh sách danh mục"
-      new_categorys": "Thêm danh mục"
+      new_categorys : "Thêm danh mục"
   controllers:
     errors:
       user_not_found: "Không tìm thấy người dùng"

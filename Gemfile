@@ -4,7 +4,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "bootstrap", "~> 4.5.3"
+gem "bootstrap", "~> 5.2", ">= 5.2.3"
 gem "config"
 gem "rails", "~> 7.0.5"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
@@ -16,6 +16,7 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "sprockets-rails"
+gem 'sassc-rails'
 # Use mysql as the database for Active Record
 gem "font-awesome-sass", "~> 5.10.2"
 gem "jquery-rails"

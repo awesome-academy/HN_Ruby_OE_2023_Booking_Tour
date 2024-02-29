@@ -1,32 +1,40 @@
-<nav id="sidebarMenu" class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
-  <div class="sidebar-sticky pt-3">
-    <ul class="nav flex-column">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= t("dashboard.link.tour")%>
-        </a>
-        <div class="dropdown-menu">
+<aside id="sidebar" class="sidebar">
+  <ul class="sidebar-nav" id="sidebar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link collapsed" data-bs-target="#tours-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span><%= t("dashboard.link.tour")%></span>
+      </a>
+      <ul id="tours-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
           <%= link_to t("dashboard.link.tours"), admin_tours_path, class: "dropdown-item" %>
-          <%= link_to t("dashboard.link.new_tours"), new_admin_tour_path, class: "dropdown-item" %>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= t("dashboard.link.bill")%>
-        </a>
-        <div class="dropdown-menu">
+        </li>
+        <li>
+          <%= link_to t("dashboard.link.new_tours") , new_admin_tour_path, class: "dropdown-item" %>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link collapsed" data-bs-target="#bills-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span><%= t("dashboard.link.bill")%></span>
+      </a>
+      <ul id="bills-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
           <%= link_to t("dashboard.link.bills"), admin_bills_path, class: "dropdown-item" %>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= t("dashboard.link.category")%>
-        </a>
-        <div class="dropdown-menu">
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span><%= t("dashboard.link.category")%></span>
+      </a>
+      <ul id="category-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
           <%= link_to t("dashboard.link.categorys"), admin_tour_categories_path, class: "dropdown-item" %>
+        </li>
+        <li>
           <%= link_to t("dashboard.link.new_categorys"), new_admin_tour_category_path, class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
