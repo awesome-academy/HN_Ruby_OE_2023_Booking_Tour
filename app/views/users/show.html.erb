@@ -1,22 +1,20 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-sm-3  bg-light">
+<div class="container mt-5 p-5 bg-light">
+  <div class="row">
+    <div class="col-sm-3">
       <div class="text-center">
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <%= image_tag rails_blob_path(current_user.avatar.variant(:avatar_full), only_path: true), class: "avatar img-circle img-thumbnail", alt: "avatar" if current_user.avatar&.attached? %>
+        <%= image_tag "http://ssl.gstatic.com/accounts/ui/avatar_2x.png", class: "avatar img-circle img-thumbnail", alt: "avatar" unless current_user.avatar&.attached? %>
       </div>
       <nav class="navbar">
         <ul class="navbar-nav">
-          <% if !admin? %>
+          <% if !current_user.admin? %>
             <li class="nav-item">
-              <%= link_to t("user.showpage.bookings"), history_path , class: "nav-link" %>
+              <%= link_to t("user.showpage.bookings"), history_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to t("user.showpage.tours_follow"), "#" , class: "nav-link" %>
+              <%= link_to t("user.showpage.tours_follow"), tour_following_path, class: "nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to t("user.showpage.review_tour"), "#" , class: "nav-link" %>
-            </li>
-          <%end%>
+          <% end %>
         </ul>
       </nav>
     </div>
@@ -24,7 +22,7 @@
       <div class="tab-content">
         <div class="tab-pane active" id="home">
           <div class="container">
-            <%= render "form", submit_text: t("user.showpage.form.update_info")%>
+            <%= render "form", submit_text: t("user.showpage.form.update_info") %>
           </div>
         </div>
       </div>

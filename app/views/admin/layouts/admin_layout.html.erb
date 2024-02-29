@@ -9,10 +9,11 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render "shared/flash_messages"%>
     <%= render "admin/layouts/header"%>
     <%= render "admin/layouts/side_navbar"%>
+    <%= turbo_frame_tag :remote_modal %>
     <main id="main" class="main">
+      <%= render "shared/flash_messages"%>
       <section class="section dashboard">
         <div class="content-wrapper">
           <%= yield %>

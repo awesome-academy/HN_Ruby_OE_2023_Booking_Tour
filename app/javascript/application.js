@@ -5,3 +5,4 @@ import 'jquery'
 import 'bootstrap'
 import "trix"
 import "@rails/actiontext"
+import "main"

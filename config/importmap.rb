@@ -11,3 +11,4 @@ pin "bootstrap", to: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/boots
 pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.2/dist/esm/index.js"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
+pin "main", to: "custom/main.js", preload: true
