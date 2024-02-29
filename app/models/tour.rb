@@ -2,6 +2,7 @@ class Tour < ApplicationRecord
   CREATE_PARAMS = [:tour_name, :hagtag,
                    :tour_description, :tour_category_id,
                    :image, :content].freeze
+  RANSACKABLE_ATTRIBUTES = ["tour_name", "hagtag"].freeze
   has_rich_text :content
   belongs_to :tour_category
   has_one_attached :image do |attachable|

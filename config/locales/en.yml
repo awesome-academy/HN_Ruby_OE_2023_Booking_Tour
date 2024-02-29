@@ -230,3 +230,8 @@ en:
     welcome: 'Welcome %{email}!'
     confirm_email: 'You can confirm your account email through the link below:'
     confirm_account: 'Confirm my account'
+  search:
+    placeholder:
+      tour_name: "Search by Tour Name"
+  buttons:
+    submit: "Submit"

@@ -4,9 +4,14 @@ class ToursController < ApplicationController
   def home; end
 
   def index
+    @q = Tour.ransack(params[:query])
     @pagy, @tours = pagy(Tour.new_tour)
   end
-
+  def search
+    @q = Tour.ransack(params[:query])
+    @pagy, @tours = pagy(@q.result(distinct: true))
+    render :index
+  end
   def show
     @pagy, @reviews = pagy(@tour.reviews.new_review)
   end
@@ -17,5 +22,8 @@ class ToursController < ApplicationController
 
     flash[:success] = t("tour_details.message.not_found")
     redirect_to admin_tours_path
+  end
+  def ransack_params
+    Tour.ransack(params[:query])
   end
 end

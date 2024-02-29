@@ -4,7 +4,11 @@ Rails.application.routes.draw do
                                     confirmations: "devise/confirmations",
                                     omniauth_callbacks: 'users/omniauth_callbacks'}
   scope "(:locale)", locale: /en|vi/ do
-    resources :tours, only: %i(home index show)
+    resources :tours, only: %i(home index show) do
+      collection do
+        get "search", to: "tours#search"
+      end
+    end
     resources :users, only: %i(index show)
     resources :bookings, only: %i(create cancel show booking_following) do
       resources :reviews, only: %i(new create)

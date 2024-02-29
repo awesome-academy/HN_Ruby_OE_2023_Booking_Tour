@@ -1,3 +1,20 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card bg-white">
+        <div class="card-body">
+          <%= search_form_for @q, url: search_tours_path, html: { class: "form-inline d-flex" } do |f| %>
+            <div class="form-group mb-2 mr-2">
+              <%= f.label :tour_name_or_hagtag_cont, t("activerecord.attributes.tour.tour_name"), class: "sr-only" %>
+              <%= f.search_field :tour_name_or_hagtag_cont, class: "form-control", placeholder: t("search.placeholder.tour_name") %>
+            </div>
+            <%= f.submit t("buttons.submit"), class: "btn btn-primary mb-2" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container py-5">
   <div class="row pb-3">
     <% if @tours.any? %>
