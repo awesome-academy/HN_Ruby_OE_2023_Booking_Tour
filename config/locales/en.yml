@@ -156,6 +156,21 @@ en:
     must_be_user: "Only users can book tours"
     errors:
       date_in_future: "Booking date must be greater than the current date"
+    mail:
+      cancel_title: "Tour Cancellation Notification"
+      confirm_title: "Tour Confirmation"
+      tour_cancellation_notification: "Tour Cancellation Notification"
+      dear_recipient: "Dear %{recipient_name},"
+      tour_cancelation_message: "We regret to inform you that the upcoming tour you were scheduled to participate in has been canceled. We understand the inconvenience this may cause, and we sincerely apologize for any disruption to your plans. %{reason}"
+      visit_our_website: "Visit Our Website"
+      tour_confirmation: "Tour Confirmation"
+      dear_customer: "Dear %{customer_name},"
+      tour_confirmation_message: "Thank you for booking the %{tour_name} tour on %{tour_date}. We are excited to have you on board!"
+      additional_details: "Additional Details"
+      tour_name: "Tour Name"
+      tour_date: "Tour Date"
+      contact_customer_support: "If you have any questions or need further assistance, please contact our customer support."
+      thank_you: "Thank you for choosing %{company_name} for your tour experience."
   dashboard:
     logo: "ThatDepTrai"
     link:

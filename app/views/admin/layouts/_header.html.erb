@@ -1,9 +1,9 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
     <%= link_to admin_dashboard_path, class: "logo d-flex align-items-center" do %>
-      <%= image_tag("/assets/img/logo.png", alt: "") %>
       <span class="d-none d-lg-block"><%= t("dashboard.logo") %></span>
     <% end %>
+    <i class="fas fa-list toggle-sidebar-btn"></i>
   </div>
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
@@ -37,10 +37,12 @@
         </ul>
       </li>
       <li class="nav-item dropdown pe-3">
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
-          Language
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown" >
+          <span class="d-none d-md-block dropdown-toggle ps-2">
+            Language
+          </span>
         </a>
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
           <li>
             <%= link_to t("language.english"), url_for(locale: "en"), class: "dropdown-item" %>
           </li>

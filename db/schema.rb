@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_22_30_709012) do
+ActiveRecord::Schema[7.0].define(version: 2024_22_30_709013) do
   create_table "action_text_rich_texts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", size: :long
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_22_30_709012) do
     t.datetime "updated_at", null: false
     t.bigint "tour_detail_id", null: false
     t.bigint "user_id", null: false
+    t.string "reason"
     t.index ["tour_detail_id"], name: "index_bookings_on_tour_detail_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

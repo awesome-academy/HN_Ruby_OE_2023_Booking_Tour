@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     as :user do
       get "signin" => "devise/sessions#new", as: "login"
       post "signin" => "devise/sessions#create"
+      get "edit_profile" => "devise/registrations#edit"
       delete "signout" => "devise/sessions#destroy"
       get "signup" => "devise/registrations#new"
     end
@@ -39,8 +40,9 @@ Rails.application.routes.draw do
       end
       get 'dashboard'=> 'homes#home', as: "dashboard"
       get '/tour/:id/tourdetails' => 'tour_details#new', as: 'add_tour_detail'
-      put 'cancel_booking/:id' => 'bills#cancel', as: 'cancel_booking'
+      get 'cancel_booking/:id' => 'bills#cancel_modal', as: 'cancel_booking'
       put 'confirm_booking/:id' => 'bills#confirm', as: 'confirm_booking'
+      post 'submit_cancel/:id' => 'bills#submit_cancel', as: "submit_cancel"
     end
   end
 end

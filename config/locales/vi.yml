@@ -46,6 +46,12 @@ vi:
       save_password: "Nhớ mật khẩu"
       forgot: "Quên mật khẩu"
       not_found_user: "Tài khoản không tồn tại"
+    editpage:
+      edit: "Edit %{resource_name}"
+      cancel_account: "Cancel my account"
+      cancel_account_button: "Cancel my account"
+      back_button: "Back"
+      confirmation_message: "Are you sure?"
     showpage:
       bookings: "Lịch sử đặt Tour"
       tours_follow: "Các tour đã theo dõi"
@@ -92,6 +98,7 @@ vi:
     unfollow_unsuccess: "Bỏ theo dõi không tour thành công"
     follow_not_exit: "Bạn chưa theo dõi tour này"
     follow_exit: "Bạn đã theo dõi tour này"
+    unfollow_unsuccess: "Bỏ theo dõi tour không thành công"
     tour_name: "Tên Tour"
     time_duration: "Thời Lượng"
     hashtag: "Hashtag"
@@ -166,6 +173,21 @@ vi:
       date_in_fulture: "Ngày đặt phải lớn hơn ngày hiện tại"
       out_of_people: "Số người đặt tour không vượt quá %{max_people}"
       update_status_fail: "Cập nhật trạng thái không thành công"
+    mail:
+      cancel_title: "Thông Báo Hủy Tour"
+      confirm_title: "Xác Nhận Tour"
+      tour_cancellation_notification: "Thông Báo Hủy Tour"
+      dear_recipient: "Kính gửi %{recipient_name},"
+      tour_cancelation_message: "Chúng tôi thành thật xin lỗi thông báo rằng tour sắp tới mà bạn đã đăng ký tham gia đã bị hủy bỏ. Chúng tôi hiểu rằng điều này có thể tạo ra bất tiện cho bạn và chân thành xin lỗi vì bất kỳ sự gây trở ngại nào cho kế hoạch của bạn "
+      sincerely: "Trân trọng, %{company_name}"
+      visit_our_website: "Truy cập trang web của chúng tôi"
+      tour_confirmation: "Xác Nhận Tour"
+      dear_customer: "Kính gửi quý khách hàng %{customer_name},"
+      tour_confirmation_message: "Cảm ơn bạn đã đặt tour %{tour_name} vào ngày %{tour_date}. Chúng tôi rất háo hức được phục vụ bạn!"
+      additional_details: "Thông Tin Bổ Sung"
+      tour_name: "Tên Tour"
+      tour_date: "Ngày Tour"
+      contact_customer_support: "Nếu bạn có bất kỳ câu hỏi hoặc cần hỗ trợ thêm, vui lòng liên hệ với bộ phận hỗ trợ khách hàng của chúng tôi."
   dashboard:
     logo: "ThatDepTrai"
     link:
@@ -247,3 +269,9 @@ vi:
       tour_name: "Tìm kiếm theo tên Tour"
   buttons:
     submit: "Gửi"
+  cancel_modal:
+    title: "Hủy đặt tour"
+    reason_label: "Lý do:"
+    close_button: "Đóng"
+    submit_button: "Hủy đặt"
+    booking_cancelled_notification: "The booking has been canceled. An email notification will be sent to the owner."

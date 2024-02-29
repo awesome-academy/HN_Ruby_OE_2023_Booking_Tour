@@ -1,0 +1,21 @@
+<%= turbo_frame_tag :form_cancel do %>
+  <%= render "shared/error_messages", object: @bill%>
+  <%= form_with model: @bill, url: admin_submit_cancel_path, method: :post do |form| %>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <%= form.label :reason, class: "mb-3" %>
+            <%= form.text_area :reason, class: "form-control" %>
+            <%= render partial: "shared/error_element_message", locals: { errors: @bill.errors[:reason] } %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t("cancel_modal.close_button") %></button>
+      <%= form.submit t("cancel_modal.submit_button"),  class: "btn btn-danger" %>
+      <%= link_to t("cancel_modal.submit_button"), "#", data: { action: "click->bs-modal#submitEnd" }, class: "btn btn-success" %>
+    </div>
+  <% end %>
+<% end %>
