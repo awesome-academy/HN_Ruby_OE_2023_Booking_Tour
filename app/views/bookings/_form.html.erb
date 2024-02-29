@@ -8,7 +8,7 @@
   </div>
   <div class="form-group">
     <%= form.label :date_start, t("bookings.form.date_start") %>
-    <%= form.date_field :date_start, class: "form-control" %>
+    <%= form.date_field :date_start, min: Time.zone.now, class: "form-control" %>
     <%= render "shared/error_element_message", errors: @booking.errors[:date_start] %>
   </div>
   <div class="form-group">
@@ -18,7 +18,8 @@
   </div>
   <div class="form-group">
     <%= form.label :numbers_people, t("bookings.form.numbers_people") %>
-    <%= form.number_field :numbers_people, class: "form-control" %>
+    <%# , max: @booking.tour_detail.max_people %>
+    <%= form.number_field :numbers_people, class: "form-control", min: 1 %>
     <%= render "shared/error_element_message", errors: @booking.errors[:numbers_people] %>
   </div>
   <%= form.hidden_field :tour_detail_id %>

@@ -112,6 +112,8 @@ en:
       detail_description: "Detail Description"
       max_people: "Maximum People"
       start_location: "Starting Location"
+      time_duration: "Time duration"
+      time_duration_view: "%{days} Days"
       price: "Price"
       submit: "Submit"
       flash:
