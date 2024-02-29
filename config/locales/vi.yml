@@ -77,6 +77,7 @@ vi:
     unfollow_unsuccess: "Bỏ theo dõi không tour thành công"
     follow_not_exit: "Bạn chưa theo dõi tour này"
     follow_exit: "Bạn đã theo dõi tour này"
+    unfollow_unsuccess: "Bỏ theo dõi tour không thành công"
     tour_name: "Tên Tour"
     time_duration: "Thời Lượng"
     hashtag: "Hashtag"
