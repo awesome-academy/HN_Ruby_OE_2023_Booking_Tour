@@ -12,7 +12,4 @@ class Review < ApplicationRecord
       Review.find_by(booking_id: booking.id)
     end
   end
-  def review_existed?
-    Review.find_by(booking:)
-  end
 end

@@ -10,7 +10,7 @@
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
-          Language
+          <%= t("language.language" )%>
         </a>
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li>
@@ -21,35 +21,22 @@
           </li>
         </ul>
       </li>
-      <% if logged_in? && admin?%>
-        <li class="nav-item dropdown pe-3">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
-            <%= image_tag current_user.avatar.variant(:avatar_icon), alt: "Profile", class: "rounded-circle" %>
-            <span class="d-none d-md-block dropdown-toggle ps-2">
-              <%= current_user.username %>
-            </span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li>
-              <%= link_to logout_path, data: { turbo_method: :delete }, class: "dropdown-item d-flex align-items-center" do %>
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Đăng xuất</span>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      <% else %>
-        <li class="nav-item dropdown pe-3">
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li>
-              <%= link_to "/signOut", class: "dropdown-item d-flex align-items-center" do %>
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Đăng xuất</span>
-              <% end %>
-            </li>
-          </ul>
-        </li>
-      <% end %>
+      <li class="nav-item dropdown pe-3">
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-toggle="dropdown">
+          <%= image_tag current_user.avatar.variant(:avatar_icon), alt: "Profile", class: "rounded-circle" if current_user.avatar&.attached? %>
+          <span class="d-none d-md-block dropdown-toggle ps-2">
+            <%= current_user.username %>
+          </span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li>
+            <%= link_to signout_path, data: { turbo_method: :delete }, class: "dropdown-item d-flex align-items-center" do %>
+              <i class="bi bi-box-arrow-right"></i>
+              <span><%= t("user.headers.account_link.logout")%></span>
+            <% end %>
+          </li>
+        </ul>
+      </li>
     </ul>
   </nav>
 </header>

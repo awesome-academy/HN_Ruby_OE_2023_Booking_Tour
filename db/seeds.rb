@@ -8,6 +8,7 @@ require 'faker'
     phone: Faker::PhoneNumber.phone_number,
     image: Faker::LoremFlickr.image(size: '300x300', search_terms: ['user']),
     password: 'password', # Set a default password or use Faker::Internet.password
+    password_confirmation: 'password', # Set a default password or use Faker::Internet.password
     admin: Faker::Boolean.boolean
   )
 end
@@ -26,7 +27,6 @@ puts 'Tour and tour details seed data has been created!'
   tour_category = TourCategory.order(Arel.sql('RAND()')).first
   tour = Tour.create(
     tour_name: Faker::Lorem.words(number: 3).join(' '),
-    time_duration: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now),
     hagtag: Faker::Lorem.word,
     tour_description: Faker::Lorem.paragraph,
     tour_category: tour_category
@@ -39,6 +39,7 @@ puts 'Tour and tour details seed data has been created!'
     tour_detail_name: "#{tour.tour_name} Details",
     max_people: Faker::Number.between(from: 1, to: 20),
     start_location: Faker::Address.city,
+    time_duration: Faker::Number.between(from: 1, to: 20),
     price: Faker::Number.decimal(l_digits: 3, r_digits: 2),
     tour: tour
   )

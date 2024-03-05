@@ -5,22 +5,6 @@ class UsersController < ApplicationController
     @pagy, @users = pagy(User.new_user)
   end
 
-  def new
-    @user = User.new
-  end
-
-  def edit; end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      redirect_to root_path
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   def following_tour
     @pagy, @tours = pagy(current_user.followed_tours)
     render "tours/index"
