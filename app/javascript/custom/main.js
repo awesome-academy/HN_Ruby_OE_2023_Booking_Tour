@@ -1,6 +1,5 @@
 
 document.addEventListener('turbo:load', function() {
-  console.log("reloadding main.js file");
   (function() {
     "use strict";
     /**

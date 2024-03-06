@@ -29,7 +29,15 @@ Rails.application.routes.draw do
 
     namespace :admin do
       resources :tours, :tour_details, :homes, :tour_categories
-      resources :bills, only: %i(index cancel confirm) do
+      resources :charts do
+        collection do
+          get 'incomes'
+          get 'status_booking'
+          get 'users_signup'
+          get 'new_booking'
+        end
+      end
+      resources :bills, only: %i(index) do
         collection do
           get "filter", to: "bills#filter"
         end
@@ -39,6 +47,7 @@ Rails.application.routes.draw do
       get 'cancel_booking/:id' => 'bills#cancel_modal', as: 'cancel_booking'
       put 'confirm_booking/:id' => 'bills#confirm', as: 'confirm_booking'
       post 'submit_cancel/:id' => 'bills#submit_cancel', as: "submit_cancel"
+      post "/charts/filter" => "charts#filter", as: "chart_filter"
     end
   end
 end
