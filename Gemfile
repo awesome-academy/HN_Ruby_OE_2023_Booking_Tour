@@ -9,7 +9,13 @@ gem "config"
 gem "rails", "~> 7.0.5"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "bcrypt"
+gem "chartkick"
 gem "devise"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "pagy"
+gem "phonelib"
 gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
@@ -35,7 +41,6 @@ gem "turbo-rails"
 
 # Hotwire"s modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "faker"
 gem "jbuilder"
@@ -89,3 +94,4 @@ gem "sidekiq", "~> 7.2"
 
 gem "redis", "~> 5.1"
 gem "whenever", "~> 1.0", require: false
+gem "groupdate", "~> 6.4"
