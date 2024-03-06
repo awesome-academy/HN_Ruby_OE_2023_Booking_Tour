@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable, :confirmable,
-         :omniauthable, omniauth_providers: %i[google_oauth2]
+         :omniauthable, omniauth_providers: %i(google_oauth2)
 
   SIGNUP_PARAMS = [:username, :phone, :email,
                   :password, :avatar,
@@ -30,8 +30,8 @@ class User < ApplicationRecord
         user.email = auth.info.email
         user.password = Devise.friendly_token[0, 20]
         user.username = auth.info.name
+      end
     end
-  end
   end
   def following_tour tour
     raise I18n.t("tours.follow_exit") if followed_tours.include?(tour)
