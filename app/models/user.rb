@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :rememberable, :validatable
+         :rememberable, :validatable, :confirmable
 
   SIGNUP_PARAMS = [:username, :phone, :email,
                   :password, :avatar,
@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :username, presence: true
   validates :phone, presence: true
+  validates :avatar, presence: true, allow_nil: true
   validates :password, presence: true, allow_nil: true
   validates :password_confirmation, presence: true, allow_nil: true
   scope :new_user, ->{order(created_at: :desc)}
@@ -33,12 +34,5 @@ class User < ApplicationRecord
     raise I18n.t("tours.follow_not_exit") unless  followed_tours.include?(tour)
 
     raise I18n.t("tours.unfollow_unsuccess") unless followed_tours.delete(tour)
-  end
-
-  def authenticated? attribute, token
-    digest = send("#{attribute}_digest")
-    return false if digest.nil?
-
-    BCrypt::Password.new(digest).is_password?(token)
   end
 end

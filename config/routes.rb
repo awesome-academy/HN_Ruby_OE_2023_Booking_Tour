@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users , controllers: {sessions: "devise/sessions",
-                                    registrations: "devise/registrations"}
+                                    registrations: "devise/registrations",
+                                    confirmations: "devise/confirmations"}
   scope "(:locale)", locale: /en|vi/ do
-    resources :tours, :tour_details, :bookings, :relationships
-    resources :users, only: %i(index following_tour show)
-    resources :bookings do
+    resources :tours, only: %i(home index show)
+    resources :users, only: %i(index show)
+    resources :bookings, only: %i(create cancel show booking_following) do
       resources :reviews, only: %i(new create)
     end
     as :user do
