@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(show)
 
-  def index
-    @pagy, @users = pagy(User.new_user)
-  end
-
   def following_tour
     @pagy, @tours = pagy(current_user.followed_tours)
     render "tours/index"
@@ -15,7 +11,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find_by id: params[:id]
+    @user = User.friendly.find_by id: params[:id]
     return if @user
 
     redirect_to users_path

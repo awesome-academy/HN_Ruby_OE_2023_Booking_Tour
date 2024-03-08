@@ -3,6 +3,10 @@ class Tour < ApplicationRecord
                    :tour_description, :tour_category_id,
                    :image, :content].freeze
   RANSACKABLE_ATTRIBUTES = ["tour_name", "hagtag"].freeze
+
+  extend FriendlyId
+  friendly_id :tour_name, use: :slugged
+
   has_rich_text :content
   belongs_to :tour_category
   has_one_attached :image do |attachable|
