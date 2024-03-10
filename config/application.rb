@@ -14,6 +14,7 @@ module RailsTutorial
     config.i18n.available_locales = [:en, :vi]
     config.i18n.default_locale = :vi
     config.time_zone = 'UTC'
+    config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   devise_for :users , controllers: {sessions: "devise/sessions",
                                     registrations: "devise/registrations",
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
           get 'new_booking'
         end
       end
+      mount Sidekiq::Web => '/sidekiq'
       resources :bills, only: %i(index) do
         collection do
           get "filter", to: "bills#filter"
