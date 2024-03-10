@@ -46,7 +46,7 @@ gem "stimulus-rails"
 gem "faker"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -96,3 +96,7 @@ gem "sidekiq", "~> 7.2"
 gem "redis", "~> 5.1"
 gem "whenever", "~> 1.0", require: false
 gem "groupdate", "~> 6.4"
+
+gem "sidekiq", "~> 7.2"
+
+gem "whenever", "~> 1.0" , require: false
