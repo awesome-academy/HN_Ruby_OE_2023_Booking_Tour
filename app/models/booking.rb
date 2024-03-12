@@ -31,7 +31,8 @@ class Booking < ApplicationRecord
   end
 
   def confirm_booking
-    return unless pending?
+    reload
+    return I18n.t("bookings.errors.update_status_fail") unless pending?
 
     update(status: 1)
   end

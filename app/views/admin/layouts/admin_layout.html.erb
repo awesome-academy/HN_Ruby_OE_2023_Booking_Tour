@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "admin", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
     <%= render "shared/flash_messages"%>
     <%= render "admin/layouts/header"%>
-    <div>
-      <%= render "admin/layouts/side_navbar"%>
-      <%= yield %>
-    </div>
+    <%= render "admin/layouts/side_navbar"%>
+    <main id="main" class="main">
+      <section class="section dashboard">
+        <div class="content-wrapper">
+          <%= yield %>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
