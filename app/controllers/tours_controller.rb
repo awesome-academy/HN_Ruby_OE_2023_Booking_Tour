@@ -4,18 +4,25 @@ class ToursController < ApplicationController
   def home; end
 
   def index
-    @pagy, @tours = pagy(Tour.new_tour)
+    @q = ransack_params
+    @pagy, @tours = pagy(@q.result(distinct: true))
   end
 
   def show
     @pagy, @reviews = pagy(@tour.reviews.new_review)
   end
+
   private
+
   def set_tour
     @tour = Tour.find_by(id: params[:id])
     return if @tour
 
     flash[:success] = t("tour_details.message.not_found")
     redirect_to admin_tours_path
+  end
+
+  def ransack_params
+    Tour.ransack(params[:query])
   end
 end
