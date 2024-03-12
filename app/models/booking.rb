@@ -7,7 +7,7 @@ class Booking < ApplicationRecord
   has_one :review, dependent: :destroy, class_name: Review.name
   validates :phone, presence: true, phone: true, on: :create
   validates :date_start, presence: true, allow_nil: true, on: :create
-  validates :reason, presence: true, on: :update
+  validates :reason, presence: true, on: :update, if: -> { status == 2 }
   validates :numbers_people, presence: true,
             numericality: {only_integer: true,
                            greater_than_or_equal_to:
