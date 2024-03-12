@@ -17,11 +17,6 @@ gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "pagy"
 gem "phonelib"
-gem "omniauth"
-gem "omniauth-google-oauth2"
-gem "omniauth-rails_csrf_protection", "~> 1.0"
-gem "pagy"
-gem "phonelib"
 gem "sassc-rails"
 gem "sprockets-rails"
 # Use mysql as the database for Active Record
@@ -89,6 +84,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "rspec-rails", "~> 6.1"
 end
 
 gem "sidekiq", "~> 7.2"
@@ -100,3 +96,11 @@ gem "groupdate", "~> 6.4"
 gem "sidekiq", "~> 7.2"
 
 gem "whenever", "~> 1.0" , require: false
+
+
+
+gem "factory_bot_rails"
+
+gem "resque", "~> 2.6"
+
+gem "open-uri", "~> 0.4.1"
