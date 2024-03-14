@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     as :user do
       get "signin" => "devise/sessions#new", as: "login"
       post "signin" => "devise/sessions#create"
+      get "edit_profile" => "devise/registrations#edit"
       delete "signout" => "devise/sessions#destroy"
       get "signup" => "devise/registrations#new"
     end

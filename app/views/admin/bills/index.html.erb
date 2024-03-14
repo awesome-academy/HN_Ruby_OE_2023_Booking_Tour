@@ -15,10 +15,10 @@
           { prompt: t("bookings.filter.labels.select_status"), selected: params[:status] }, class: "form-control" ) %>
       </div>
       <div class="col-sm-2">
-        <%= f.submit t("bookings.show.search"), class: "btn btn-primary mt-4 mb-2 w-100" %>
+        <%= f.submit t("buttons.search"), class: "btn btn-primary mt-4 mb-2 w-100" %>
       </div>
       <div class="col-sm-2">
-        <%= link_to t("bookings.show.clear_search"), admin_bills_path , data: { turbo_method: :get }, class: "btn btn-warning mt-4 mb-2 w-100"%>
+        <%= link_to t("buttons.clear_search"), admin_bills_path , data: { turbo_method: :get }, class: "btn btn-warning mt-4 mb-2 w-100"%>
       </div>
     </div>
   <% end %>

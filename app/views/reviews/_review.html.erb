@@ -11,8 +11,8 @@
         </i>
       </small>
       <% if review.user == current_user %>
-        <%= link_to t("reviews.delete"), review, data: { turbo_method: :delete, turbo_confirm: t("reviews.comfirm_delete")}, class: "btn btn-danger"  %>
-        <%= link_to t("reviews.update"), edit_review_path(review), class: "btn btn-primary"  %>
+        <%= link_to t("buttons.delete"), review, data: { turbo_method: :delete, turbo_confirm: t("reviews.comfirm_delete")}, class: "btn btn-danger"  %>
+        <%= link_to t("buttons.update"), edit_review_path(review), class: "btn btn-primary"  %>
       <% end %>
     </h6>
     <p><%= review.review_text %></p>
