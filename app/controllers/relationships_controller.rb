@@ -25,7 +25,7 @@ class RelationshipsController < ApplicationController
   private
 
   def load_tour
-    @tour = Tour.find_by id: params[:id]
+    @tour = Tour.friendly.find params[:id]
     return if @tour
 
     flash[:warning] = t("controllers.errors.booking_not_found")
