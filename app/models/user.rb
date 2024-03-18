@@ -22,6 +22,12 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true
   validates :password_confirmation, presence: true, allow_nil: true
   scope :new_user, ->{order(created_at: :desc)}
+  scope :users_signup, lambda {|date_from, date_to|
+    group_by_day(:created_at,
+                 range: date_from..date_to,
+                 format: Settings.dd_mm_yyyy_fm)
+      .count
+  }
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

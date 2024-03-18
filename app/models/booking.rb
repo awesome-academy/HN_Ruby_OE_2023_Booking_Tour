@@ -16,7 +16,23 @@ class Booking < ApplicationRecord
   validate :booking_date_in_future, on: :create
   validate :out_of_peoples, if: ->{numbers_people.present?}
   scope :new_bills, ->{order(created_at: :desc)}
-
+  scope :incomes, lambda {|date_form, date_to|
+    where(status: :successed)
+      .group_by_day(:created_at,
+                    range: date_form..date_to,
+                    format: Settings.dd_mm_yyyy_fm)
+      .sum(:total_amount)
+  }
+  scope :new_bookings, lambda {|date_form, date_to|
+    where(created_at: date_form..date_to)
+      .group(:tour_detail)
+      .count
+  }
+  scope :status_bookings, lambda {|date_form, date_to|
+    where(created_at: date_form..date_to)
+      .group(:status)
+      .count
+  }
   before_create :update_prices, :status_booking
   before_save :caculate_end_date
   enum status: {
@@ -25,6 +41,16 @@ class Booking < ApplicationRecord
     canceled: 2,
     successed: 3
   }
+
+  class << self
+    def new_booking_hash_order date_from, date_to
+      bookings = new_bookings(date_from, date_to)
+      transformed_bookings = bookings.transform_keys do |key|
+        key.is_a?(TourDetail) ? key[:tour_detail_name] : key
+      end
+      transformed_bookings.sort_by{|_k, v| -v}
+    end
+  end
 
   def cancel_booking params
     reload

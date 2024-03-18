@@ -8,3 +8,4 @@ peoples_booking_min: 1
 time_during_min: 1
 price_min: 0
 host: "localhost:3000"
+dd_mm_yyyy_fm: "%d-%m-%Y"
