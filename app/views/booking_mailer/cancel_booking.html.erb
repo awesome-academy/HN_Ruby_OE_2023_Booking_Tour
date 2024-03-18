@@ -1,0 +1,7 @@
+<div class="container">
+  <h1><%= t("bookings.mail.tour_cancellation_notification") %></h1>
+  <p><%= t("bookings.mail.dear_recipient", recipient_name: @user.username) %>,</p>
+  <p><%= t("bookings.mail.tour_cancelation_message") %> <%= @booking.reason %></p>
+  <p><%= t("bookings.mail.contact_customer_support") %></p>
+  <p><%= t("bookings.mail.thank_you") %></p>
+</div>

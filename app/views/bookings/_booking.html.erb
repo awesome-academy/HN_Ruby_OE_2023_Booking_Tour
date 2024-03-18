@@ -39,7 +39,7 @@
         <%= link_to t("bookings.canceltour"), cancel_booking_path(booking), class: "btn btn-danger btn-sm ml-2" %>
       <% end %>
       <% if reviewable?(booking) %>
-        <%= link_to t('bookings.review_tour'), new_booking_review_path(booking), data: { turbo: false}, class: 'btn btn-primary btn-sm ml-2' %>
+        <%= link_to t("bookings.review_tour"), new_booking_review_path(booking), data: { turbo: false}, class: "btn btn-primary btn-sm ml-2" %>
       <% end %>
       <% if booking.review %>
         <%= render "reviews/review", review: booking.review %>
