@@ -308,8 +308,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    redis (5.1.0)
-      redis-client (>= 0.17.0)
+    redis (4.8.1)
     redis-client (0.21.0)
       connection_pool
     redis-namespace (1.11.0)
@@ -481,7 +480,7 @@ DEPENDENCIES
   rails (~> 7.0.5)
   rails-i18n
   ransack (~> 3.0)
-  redis (~> 5.1)
+  redis (~> 4.1)
   resque (~> 2.6)
   rspec-rails (~> 6.1.0)
   rubocop (~> 1.26)

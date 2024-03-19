@@ -89,13 +89,11 @@ group :test do
   gem "simplecov-rcov", require: false
   gem "webdrivers"
 end
-gem "groupdate", "~> 6.4"
-gem "redis", "~> 5.1"
-gem "sidekiq", "~> 7.2"
-gem "whenever", "~> 1.0", require: false
 
 gem "factory_bot_rails"
-
-gem "resque", "~> 2.6"
-
+gem "groupdate", "~> 6.4"
 gem "open-uri", "~> 0.4.1"
+gem "redis", "~> 4.1"
+gem "resque", "~> 2.6"
+gem "sidekiq", "~> 7.2"
+gem "whenever", "~> 1.0", require: false
