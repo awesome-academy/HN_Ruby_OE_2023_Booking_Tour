@@ -41,7 +41,7 @@ class Admin::TourDetailsController < Admin::BaseController
 
   private
   def find_tour
-    @tour = Tour.find_by(id: params[:id])
+    @tour = Tour.friendly.find params[:id]
     return if @tour
 
     flash[:success] = t("tour_details.message.not_found")
