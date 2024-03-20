@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
   def cancel
     begin
-      @booking.cancel_booking
+      @booking.cancel_booking({"reason" => Settings.user_reason_cancel})
       flash[:success] = t("bookings.cancel_success")
     rescue RuntimeError => e
       flash[:danger] = e

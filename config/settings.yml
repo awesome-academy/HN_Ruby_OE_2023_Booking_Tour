@@ -10,3 +10,4 @@ price_min: 0
 success_3_days: 3
 host: "localhost:3000"
 dd_mm_yyyy_fm: "%d-%m-%Y"
+user_reason_cancel: "User cancel"
