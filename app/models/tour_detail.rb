@@ -1,7 +1,7 @@
 class TourDetail < ApplicationRecord
   TOURDETAIL_PARAMS = [:tour_detail_name, :detail_description,
                         :max_people, :start_location, :price,
-                        :tour_id, :time_duration].freeze
+                        :tour_id, :time_duration, :schedule].freeze
   belongs_to :tour
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings, source: :review
@@ -18,4 +18,5 @@ class TourDetail < ApplicationRecord
   validates :time_duration, presence: true,
             numericality: {greater_than_or_equal_to:
             Settings.time_during_min}
+  has_rich_text :schedule
 end

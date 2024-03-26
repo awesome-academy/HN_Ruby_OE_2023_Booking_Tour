@@ -101,6 +101,7 @@ en:
       start_location: "Starting Location"
       time_duration: "Number of Days"
       time_duration_view: "%{days} Days"
+      schedule: "Schedule"
     flash:
       success_create: "Tour detail created successfully."
       success_update: "Tour detail updated successfully."
@@ -108,6 +109,7 @@ en:
     tour_detail_deleted: "Deleted successfully !!!!"
     tour_detail_fail: "Deletion unsuccessful"
   bookings:
+    booking: "Booking"
     form:
       booking_date: "Booking Date"
       phone: "Phone (+84)"
