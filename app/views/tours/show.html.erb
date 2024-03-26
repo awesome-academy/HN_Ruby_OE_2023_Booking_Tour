@@ -35,7 +35,6 @@
     </div>
     <div class="col-3">
       <div class="mb-5">
-        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Booking </h4>
         <% if @tour.tour_details.any? %>
           <% @tour.tour_details.each do |tour_detail| %>
             <%= render "tour_details/tour_detail_preview", tour_detail: tour_detail %>

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "pagy/extras/i18n"
 require 'pagy/extras/bootstrap'
 Pagy::DEFAULT[:items]  = 10
 # Pagy initializer file (6.4.3)

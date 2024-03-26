@@ -1,7 +1,7 @@
 <div class="col-md-4 mb-3 pb-2 tourdetail">
   <div class="blog-item">
     <div class="position-relative">
-      <%= image_tag tour.image, class: "img-fluid w-100", alt: t("tours.tour_image") if tour.image&.attached? %>
+      <%= image_tag default_image(tour), class: "img-fluid w-100", alt: t("tours.tour_image") %>
     </div>
     <div class="bg-white p-4">
       <div class="d-flex mb-2">
